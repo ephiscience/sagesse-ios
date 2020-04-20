@@ -8,89 +8,91 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    
-    @State private var selectedPlayersNumber = 1
-    @State private var selectedDifficultyLevel = 1
-    
-    var possiblePlayersNumber = [3, 4, 5, 6]
+
+class GameParamsViewModel : ObservableObject {
+    @Published var welcomeMessage = NSLocalizedString("home.welcome.message", comment: "Bienvenue à Expedition Sagesse")
+    @Published var chooseNumberUsersMessage = NSLocalizedString("home.choose.playersNumber", comment: "Sélectionnez le nombre de joueurs")
+    @Published var chooseDifficultyMessage = NSLocalizedString("home.choose.difficultyLevel", comment: "Choisissez le niveau de difficulté")
+    @Published var continueButtonTitle = NSLocalizedString("continue.button", comment: "Continuer")
+    @Published var possiblePlayersNumber : [Int] = [3, 4, 5, 6]
     
     var difficultyLevels = GameSettingsProvider.getDifficultyLevels()
+    var storageController = StorageController()
     
-    let welcomeMessage = NSLocalizedString("home.welcome.message", comment: "Bienvenue à Expedition Sagesse")
-    let chooseNumberUsersMessage = NSLocalizedString("home.choose.playersNumber", comment: "Sélectionnez le nombre de joueurs")
-    let chooseDifficultyMessage = NSLocalizedString("home.choose.difficultyLevel", comment: "Choisissez le niveau de difficulté")
-    let continueButtonTitle = NSLocalizedString("continue.button", comment: "Continuer")
-   
-    let cRadius = CGFloat(5.0)
-    let cHeight = CGFloat(35)
+    @State var selectedPlayersNumber = 1
+    @State var selectedDifficultyLevel = 1
     
-    
-    var storageController: StorageController?
-    
-    var body: some View {
-        NavigationView {
-        ScrollView(.vertical) {
-            VStack {
-                VStack {
-                    Text(welcomeMessage).padding().font(.title).padding().multilineTextAlignment(TextAlignment.center)
-                    Text(chooseNumberUsersMessage)
-                    Picker(selection: $selectedPlayersNumber, label: Text("")) {
-                        ForEach(0 ..< possiblePlayersNumber.count){
-                            Text("\(self.possiblePlayersNumber[$0])")
-                        }
-                    }.labelsHidden().frame(height: 130)
-                }
-                 
-                Spacer()
-                
-                VStack {
-                Text(chooseDifficultyMessage)
-                Picker(selection: $selectedDifficultyLevel, label: Text("")) {
-                    ForEach(0 ..< difficultyLevels.count){
-                        Text("\(self.difficultyLevels[$0].numberOfCards) (\(self.difficultyLevels[$0].name))")
-                    }
-                }.labelsHidden().frame(height: 130).padding(.bottom)
-                }
-                
-                Spacer()
-                
-                
-                //Continue button with Navigation link to PlayersView
-                var playersView = PlayersView()
-                let storageController = StorageController()
-                playersView.storageController = storageController
-                
-                NavigationLink(destination: playersView) {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: cRadius)
-                            .foregroundColor(.white)
-                            .opacity(0)
-                            .background(LinearGradient(gradient: Gradient(colors: [Color(red: 109/255, green: 58/255, blue: 242/255),Color(red: 57/255, green: 23/255, blue: 189/255)]), startPoint: .leading, endPoint: .trailing))
-                            .cornerRadius(cRadius)
-                            .frame(height: cHeight)
-                            .padding()
-                        Text(continueButtonTitle).foregroundColor(.white)
-                    }
-                  
-                }.buttonStyle(PlainButtonStyle())
-                .simultaneousGesture(TapGesture().onEnded {
-                    self.saveCurrentParams()
-                })
-            }
-        }
-        }
-    }
-    
-    
-    func saveCurrentParams() {
+     func saveCurrentParams() {
         let playersNumber = possiblePlayersNumber[selectedPlayersNumber]
         let numberOfCards = difficultyLevels[selectedDifficultyLevel].numberOfCards
         let gameParams = CurrentGame(playersNumber:playersNumber, numberOfCards: numberOfCards, playersNames: nil)
 
-        storageController?.save(currentGame: gameParams)
+        storageController.save(currentGame: gameParams)
         
     }
+    
+}
+
+struct ContentView: View {
+    
+    @ObservedObject var viewModel : GameParamsViewModel = GameParamsViewModel()
+
+
+    let cRadius = CGFloat(5.0)
+    let cHeight = CGFloat(35)
+    
+    
+    var body: some View {
+        NavigationView {
+            ScrollView(.vertical) {
+                VStack {
+                    VStack {
+                        Text(viewModel.welcomeMessage).padding().font(.title).padding().multilineTextAlignment(TextAlignment.center)
+                        Text(viewModel.chooseNumberUsersMessage)
+                        Picker(selection: $viewModel.selectedPlayersNumber, label: Text("")) {
+                            ForEach(0 ..< viewModel.possiblePlayersNumber.count ){
+                                Text("\(self.viewModel.possiblePlayersNumber[$0])")
+                            }
+                        }.labelsHidden().frame(height: 130)
+                        
+                    }
+                    
+                    Spacer()
+                    
+                    VStack {
+                        Text(viewModel.chooseDifficultyMessage)
+                        Picker(selection: $viewModel.selectedDifficultyLevel, label: Text("")) {
+                            ForEach(0 ..< viewModel.difficultyLevels.count){
+                                Text("\(self.viewModel.difficultyLevels[$0].numberOfCards) (\(self.viewModel.difficultyLevels[$0].name))")
+                            }
+                        }.labelsHidden().frame(height: 130).padding(.bottom)
+                    }
+                    
+                    Spacer()
+                    
+                   
+                    //Continue button with Navigation link to PlayersView
+                    NavigationLink(destination: PlayersView()) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: cRadius)
+                                .foregroundColor(.white)
+                                .opacity(0)
+                                .background(LinearGradient(gradient: Gradient(colors: [Color(red: 109/255, green: 58/255, blue: 242/255),Color(red: 57/255, green: 23/255, blue: 189/255)]), startPoint: .leading, endPoint: .trailing))
+                                .cornerRadius(cRadius)
+                                .frame(height: cHeight)
+                                .padding()
+                            Text(viewModel.continueButtonTitle).foregroundColor(.white)
+                        }
+
+                    }.buttonStyle(PlainButtonStyle())
+                        .simultaneousGesture(TapGesture().onEnded {
+                            self.viewModel.saveCurrentParams()
+                        })
+                }
+            }
+        }
+    }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
