@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TvE-Ah-E0U">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="rAd-eb-VTM">
+            <objects>
+                <navigationController id="TvE-Ah-E0U" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lgI-Z6-MKd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bBz-fb-AzU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c42-XW-Xq1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-505" y="139"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="expeditionSagesse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenue à  Expedition Sagesse" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7x-8h-wtj">
+                                <rect key="frame" x="59.5" y="74" width="256.5" height="76.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yw-EJ-2w9">
+                                <rect key="frame" x="16" y="611" width="343" height="36"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="RsM-kf-dwX"/>
+                                </constraints>
+                                <state key="normal" title="Continuer">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="t5H-su-NIB" kind="show" id="mdY-uY-Ggc"/>
+                                </connections>
+                            </button>
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJ7-Xr-xrB">
+                                <rect key="frame" x="27.5" y="212.5" width="320" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="u3T-LM-OOW"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sélectionnez le nombre de joueurs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXv-0Z-KpW">
+                                <rect key="frame" x="56" y="180.5" width="263" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisissez le niveau de difficulté" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRz-i9-7yE">
+                                <rect key="frame" x="65" y="412.5" width="245" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsb-RS-C93">
+                                <rect key="frame" x="27.5" y="444.5" width="320" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="USZ-BK-mXg"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sRz-i9-7yE" firstAttribute="top" secondItem="qJ7-Xr-xrB" secondAttribute="bottom" constant="30" id="5IY-Yp-ltK"/>
+                            <constraint firstItem="m7x-8h-wtj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="IKp-L3-Y4x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5Yw-EJ-2w9" secondAttribute="bottom" constant="20" id="Ulu-AO-6Vs"/>
+                            <constraint firstItem="5Yw-EJ-2w9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="boR-ZC-z4i"/>
+                            <constraint firstItem="hsb-RS-C93" firstAttribute="top" secondItem="sRz-i9-7yE" secondAttribute="bottom" constant="8" id="c7m-e7-dWI"/>
+                            <constraint firstItem="qJ7-Xr-xrB" firstAttribute="centerX" secondItem="m7x-8h-wtj" secondAttribute="centerX" id="fQ4-gD-h0t"/>
+                            <constraint firstItem="sRz-i9-7yE" firstAttribute="centerX" secondItem="m7x-8h-wtj" secondAttribute="centerX" id="gef-kT-Nrn"/>
+                            <constraint firstItem="5Yw-EJ-2w9" firstAttribute="centerX" secondItem="m7x-8h-wtj" secondAttribute="centerX" id="lRh-MJ-MFG"/>
+                            <constraint firstItem="cXv-0Z-KpW" firstAttribute="centerX" secondItem="m7x-8h-wtj" secondAttribute="centerX" id="qjn-5b-giF"/>
+                            <constraint firstItem="qJ7-Xr-xrB" firstAttribute="top" secondItem="cXv-0Z-KpW" secondAttribute="bottom" constant="8" id="sLL-CI-MhC"/>
+                            <constraint firstItem="hsb-RS-C93" firstAttribute="centerX" secondItem="m7x-8h-wtj" secondAttribute="centerX" id="yWR-oU-3kw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Yw-EJ-2w9" secondAttribute="trailing" constant="16" id="zBS-OW-fVd"/>
+                            <constraint firstItem="cXv-0Z-KpW" firstAttribute="top" secondItem="m7x-8h-wtj" secondAttribute="bottom" constant="30" id="zsx-7Q-56j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Okz-X6-91k"/>
+                    <connections>
+                        <outlet property="gameDifficultyLabel" destination="sRz-i9-7yE" id="r0U-1f-qmo"/>
+                        <outlet property="gameDifficultyPicker" destination="hsb-RS-C93" id="MQb-l9-vJF"/>
+                        <outlet property="playersNumberPicker" destination="qJ7-Xr-xrB" id="eSn-Pw-osz"/>
+                        <outlet property="playersNumberTitle" destination="cXv-0Z-KpW" id="Vcn-hV-q7C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="402" y="139"/>
+        </scene>
+        <!--Players View Controller-->
+        <scene sceneID="0wx-Nf-Plg">
+            <objects>
+                <viewController id="t5H-su-NIB" customClass="PlayersViewController" customModule="expeditionSagesse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w0o-yU-BDr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uqm-z1-GYX">
+                                <rect key="frame" x="0.0" y="128" width="375" height="463"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Aog-bZ-JYb">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aog-bZ-JYb" id="cgI-FC-QcF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdL-EF-cUN">
+                                                    <rect key="frame" x="15" y="9" width="60" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom du joueur X" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Otd-wf-0Tl">
+                                                    <rect key="frame" x="83" y="22" width="251" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-C3-FlF">
+                                <rect key="frame" x="16" y="611" width="343" height="36"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="rCG-Hk-rcj"/>
+                                </constraints>
+                                <state key="normal" title="Lancer la partie">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="nmU-vw-6g3" kind="show" id="Rpu-lJ-PcJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saisissez les noms des joueurs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOw-vI-7zz">
+                                <rect key="frame" x="73" y="74" width="229" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gC7-2i-vqt" firstAttribute="trailing" secondItem="ryx-C3-FlF" secondAttribute="trailing" constant="16" id="9lQ-3e-Ysz"/>
+                            <constraint firstItem="nOw-vI-7zz" firstAttribute="centerX" secondItem="w0o-yU-BDr" secondAttribute="centerX" id="CJd-LA-0pE"/>
+                            <constraint firstItem="ryx-C3-FlF" firstAttribute="leading" secondItem="gC7-2i-vqt" secondAttribute="leading" constant="16" id="Ecu-eF-6tv"/>
+                            <constraint firstItem="ryx-C3-FlF" firstAttribute="top" secondItem="uqm-z1-GYX" secondAttribute="bottom" constant="20" id="O8Q-Kk-4eY"/>
+                            <constraint firstItem="nOw-vI-7zz" firstAttribute="top" secondItem="gC7-2i-vqt" secondAttribute="top" constant="30" id="Q4D-L5-vxP"/>
+                            <constraint firstItem="uqm-z1-GYX" firstAttribute="top" secondItem="nOw-vI-7zz" secondAttribute="bottom" constant="30" id="mfX-By-gFN"/>
+                            <constraint firstItem="gC7-2i-vqt" firstAttribute="bottom" secondItem="ryx-C3-FlF" secondAttribute="bottom" constant="20" id="qVL-oR-bo2"/>
+                            <constraint firstItem="ryx-C3-FlF" firstAttribute="centerX" secondItem="w0o-yU-BDr" secondAttribute="centerX" id="rTq-7x-f8B"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gC7-2i-vqt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wak-Xp-CGp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-um-j2E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1189.5999999999999" y="138.98050974512745"/>
+        </scene>
+        <!--Select Question View Controller-->
+        <scene sceneID="Aaf-KM-eFE">
+            <objects>
+                <viewController id="nmU-vw-6g3" customClass="SelectQuestionViewController" customModule="expeditionSagesse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UWS-cw-38l" customClass="Selec">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="UJu-iH-GbX"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3L3-aM-JSw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j87-fT-krD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1990" y="139"/>
+        </scene>
+    </scenes>
+</document>

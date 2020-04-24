@@ -1,0 +1,13 @@
+/* 
+  Localizables.strings
+  expeditionSagesseStoryboard
+
+  Created by Omar Mahboubi on 24/04/2020.
+  Copyright © 2020 ephiscience. All rights reserved.
+*/
+
+
+"difficulty.level.easy" = "Easy";
+"difficulty.level.middle" = "Middle";
+"difficulty.level.hard" = "Hard";
+"continue.button" = "Continue";

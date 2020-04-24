@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  expeditionSagesse
+//  expeditionSagesseStoryboard
 //
-//  Created by Omar Mahboubi on 07/04/2020.
+//  Created by Omar Mahboubi on 24/04/2020.
 //  Copyright © 2020 ephiscience. All rights reserved.
 //
 

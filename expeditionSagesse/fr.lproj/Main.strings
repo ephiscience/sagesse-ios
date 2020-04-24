@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "Continuer"; ObjectID = "5Yw-EJ-2w9"; */
+"5Yw-EJ-2w9.normalTitle" = "Continuer";
+
+/* Class = "UILabel"; text = "Sélectionnez le nombre de joueurs"; ObjectID = "cXv-0Z-KpW"; */
+"cXv-0Z-KpW.text" = "Sélectionnez le nombre de joueurs";
+
+/* Class = "UILabel"; text = "Bienvenue à  Expedition Sagesse"; ObjectID = "m7x-8h-wtj"; */
+"m7x-8h-wtj.text" = "Bienvenue à\nExpedition Sagesse";
+
+/* Class = "UILabel"; text = "Choisissez le niveau de difficulté"; ObjectID = "sRz-i9-7yE"; */
+"sRz-i9-7yE.text" = "Choisissez le niveau de difficulté";
+
+
+
