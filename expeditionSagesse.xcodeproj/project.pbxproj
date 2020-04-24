@@ -26,8 +26,6 @@
 		82F5F7232452F0E8001642A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82F5F7262452F0E8001642A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82F5F7282452F0E8001642A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		82F5F72F2452F660001642A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		82F5F7302452F675001642A3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		82F5F7342452F723001642A3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		82F5F7362452F728001642A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		82F5F7372452F7A2001642A3 /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
@@ -167,8 +165,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				82F5F7212452F0E6001642A3 /* Base */,
-				82F5F72F2452F660001642A3 /* en */,
-				82F5F7302452F675001642A3 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

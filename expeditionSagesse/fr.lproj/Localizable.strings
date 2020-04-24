@@ -7,8 +7,9 @@
 */
 
 
-
-
+"home.welcome.message" = "Bienvenue à\nExpedition Sagesse";
+"home.choose.playersNumber" = "Sélectionnez le nombre de joueurs";
+"home.choose.difficultyLevel" = "Choisissez le niveau de difficulté";
 "difficulty.level.easy" = "Facile";
 "difficulty.level.middle" = "Moyen";
 "difficulty.level.hard" = "Difficile";

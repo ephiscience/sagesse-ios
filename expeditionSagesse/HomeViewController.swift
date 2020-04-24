@@ -52,24 +52,18 @@ class HomeViewController: UIViewController {
     
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           
-           if segue.identifier == "SelecPlayersSegue", let playersViewController = segue.destination as? PlayersViewController {
-               
-           }
-       }
-    
-    @IBAction func didSelectEntertainementItem(_ sender: Any) {
-           
-    
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-
-        self.performSegue(withIdentifier: "AFEntertainmentSegue", sender: nil)
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SelecPlayersSegue", let playersViewController = segue.destination as? PlayersViewController {
+            
+        }
     }
     
+    @IBAction func didSelectEntertainementItem(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        self.performSegue(withIdentifier: "AFEntertainmentSegue", sender: nil)
+    }
 }
+
 extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     // MARK:-  Picker Data source

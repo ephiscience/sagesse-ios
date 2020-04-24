@@ -173,6 +173,9 @@
                         <viewLayoutGuide key="safeArea" id="gC7-2i-vqt"/>
                     </view>
                     <navigationItem key="navigationItem" id="wak-Xp-CGp"/>
+                    <connections>
+                        <outlet property="enterPlayersNamesLabel" destination="nOw-vI-7zz" id="cc6-tm-Lqi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-um-j2E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,7 +185,7 @@
         <scene sceneID="Aaf-KM-eFE">
             <objects>
                 <viewController id="nmU-vw-6g3" customClass="SelectQuestionViewController" customModule="expeditionSagesse" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UWS-cw-38l" customClass="Selec">
+                    <view key="view" contentMode="scaleToFill" id="UWS-cw-38l" userLabel="View" customClass="Selec">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -192,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j87-fT-krD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1990" y="139"/>
+            <point key="canvasLocation" x="1989.5999999999999" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
