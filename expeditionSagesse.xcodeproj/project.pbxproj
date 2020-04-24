@@ -315,13 +315,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RX7J2U5N53;
-				INFOPLIST_FILE = expeditionSagesseStoryboard/Info.plist;
+				INFOPLIST_FILE = expeditionSagesse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.ephiscience.expeditionSagesseStoryboard;
+				PRODUCT_BUNDLE_IDENTIFIER = org.ephiscience.expeditionSagesse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -334,13 +334,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RX7J2U5N53;
-				INFOPLIST_FILE = expeditionSagesseStoryboard/Info.plist;
+				INFOPLIST_FILE = expeditionSagesse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.ephiscience.expeditionSagesseStoryboard;
+				PRODUCT_BUNDLE_IDENTIFIER = org.ephiscience.expeditionSagesse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
