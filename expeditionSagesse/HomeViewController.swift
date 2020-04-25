@@ -49,6 +49,18 @@ class HomeViewController: UIViewController {
         gameDifficultyPicker.dataSource = self
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if(segue.identifier == SegueIdentifier.ChoosePlayersNamesSegue.rawValue) {
+            
+            let playersController : PlayersViewController = segue.destination as! PlayersViewController
+                
+            playersController.playersNumber = possiblePlayersNumber[playersNumberPicker.selectedRow(inComponent: 0)]
+            
+        }
+    }
 }
 
 extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {

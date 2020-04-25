@@ -8,12 +8,13 @@
 
 import Foundation
 
-public class Player {
+ public struct Player {
     var identifier: Int
-    var name: String
+    var name: String?
+    var imageName: String?
 
-    public init(identifier: Int, name: String) {
-        self.identifier = identifier
-        self.name = name
-    }
+//    public init(identifier: Int, name: String, image) {
+//        self.identifier = identifier
+//        self.name = name
+//    }
 }

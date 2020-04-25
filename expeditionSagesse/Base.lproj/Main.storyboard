@@ -47,7 +47,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="t5H-su-NIB" kind="show" id="mdY-uY-Ggc"/>
+                                    <segue destination="t5H-su-NIB" kind="show" identifier="ChoosePlayersNamesSegue" id="mdY-uY-Ggc"/>
                                 </connections>
                             </button>
                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJ7-Xr-xrB">
@@ -113,11 +113,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uqm-z1-GYX">
-                                <rect key="frame" x="0.0" y="128" width="375" height="463"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uqm-z1-GYX">
+                                <rect key="frame" x="0.0" y="107.5" width="375" height="480"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="480" id="uVn-5d-qa4"/>
+                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Aog-bZ-JYb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerTableViewCellId" rowHeight="80" id="Aog-bZ-JYb" customClass="PlayerTableViewCell" customModule="expeditionSagesse" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aog-bZ-JYb" id="cgI-FC-QcF">
@@ -136,8 +139,16 @@
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playerImageView" destination="fdL-EF-cUN" id="Mm5-5b-vsD"/>
+                                            <outlet property="playerNameTextField" destination="Otd-wf-0Tl" id="bgi-2q-Kq4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="t5H-su-NIB" id="iR3-Q3-ZqI"/>
+                                    <outlet property="delegate" destination="t5H-su-NIB" id="kwv-aI-D7K"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-C3-FlF">
                                 <rect key="frame" x="16" y="611" width="343" height="36"/>
@@ -153,7 +164,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saisissez les noms des joueurs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOw-vI-7zz">
-                                <rect key="frame" x="73" y="74" width="229" height="24"/>
+                                <rect key="frame" x="73" y="64" width="229" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -161,12 +172,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="uqm-z1-GYX" firstAttribute="centerX" secondItem="nOw-vI-7zz" secondAttribute="centerX" id="3bS-Hg-Me2"/>
                             <constraint firstItem="gC7-2i-vqt" firstAttribute="trailing" secondItem="ryx-C3-FlF" secondAttribute="trailing" constant="16" id="9lQ-3e-Ysz"/>
                             <constraint firstItem="nOw-vI-7zz" firstAttribute="centerX" secondItem="w0o-yU-BDr" secondAttribute="centerX" id="CJd-LA-0pE"/>
                             <constraint firstItem="ryx-C3-FlF" firstAttribute="leading" secondItem="gC7-2i-vqt" secondAttribute="leading" constant="16" id="Ecu-eF-6tv"/>
-                            <constraint firstItem="ryx-C3-FlF" firstAttribute="top" secondItem="uqm-z1-GYX" secondAttribute="bottom" constant="20" id="O8Q-Kk-4eY"/>
-                            <constraint firstItem="nOw-vI-7zz" firstAttribute="top" secondItem="gC7-2i-vqt" secondAttribute="top" constant="30" id="Q4D-L5-vxP"/>
-                            <constraint firstItem="uqm-z1-GYX" firstAttribute="top" secondItem="nOw-vI-7zz" secondAttribute="bottom" constant="30" id="mfX-By-gFN"/>
+                            <constraint firstItem="ryx-C3-FlF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uqm-z1-GYX" secondAttribute="bottom" constant="20" id="O8Q-Kk-4eY"/>
+                            <constraint firstItem="nOw-vI-7zz" firstAttribute="top" secondItem="gC7-2i-vqt" secondAttribute="top" constant="20" id="Q4D-L5-vxP"/>
+                            <constraint firstItem="uqm-z1-GYX" firstAttribute="leading" secondItem="gC7-2i-vqt" secondAttribute="leading" id="RyC-8N-nlb"/>
+                            <constraint firstItem="uqm-z1-GYX" firstAttribute="top" secondItem="nOw-vI-7zz" secondAttribute="bottom" constant="20" id="mfX-By-gFN"/>
                             <constraint firstItem="gC7-2i-vqt" firstAttribute="bottom" secondItem="ryx-C3-FlF" secondAttribute="bottom" constant="20" id="qVL-oR-bo2"/>
                             <constraint firstItem="ryx-C3-FlF" firstAttribute="centerX" secondItem="w0o-yU-BDr" secondAttribute="centerX" id="rTq-7x-f8B"/>
                         </constraints>
@@ -175,6 +188,8 @@
                     <navigationItem key="navigationItem" id="wak-Xp-CGp"/>
                     <connections>
                         <outlet property="enterPlayersNamesLabel" destination="nOw-vI-7zz" id="cc6-tm-Lqi"/>
+                        <outlet property="startGameButton" destination="ryx-C3-FlF" id="aSZ-xs-qd9"/>
+                        <outlet property="tableview" destination="uqm-z1-GYX" id="f6o-Cp-Z6h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-um-j2E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
