@@ -22,6 +22,7 @@ class expeditionSagesseTests: XCTestCase {
     func testThreePlayersPartyTeamsSet() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
         let players: [Player] = [Player(identifier: 0, name: "Omar"), Player(identifier: 1, name: "Karim"), Player(identifier: 2, name: "Pleen")]
         let party: Party = Party(players: players)
         party.setTeams()

@@ -15,5 +15,8 @@
 "difficulty.level.hard" = "Difficile";
 "players.choose.name.title" = "Saisissez les noms des joueurs";
 "continue.button" = "Continuer";
+"selectQuestion.title" = "Question %@/%@";
+"selectQuestion.talkingPlayersLabel" = "Orateurs";
+"selectQuestion.judgePlayersLabel" = "Auditeurs";
 "player.name.placeholder" = "Nom du joueur %1$d";
 "button.start.game" = "Lancer la partie";

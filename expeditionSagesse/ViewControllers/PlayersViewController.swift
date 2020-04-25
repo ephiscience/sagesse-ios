@@ -52,9 +52,9 @@ class PlayersViewController: UIViewController {
         if(segue.identifier == SegueIdentifier.ChoosePlayersNamesSegue.rawValue) {
             
             let selectQuestionController : SelectQuestionViewController = segue.destination as! SelectQuestionViewController
-            
-            selectQuestionController.players = self.players
-            
+            let newParty: Party = Party(players: self.players)
+            newParty.setTeams()
+            selectQuestionController.party = newParty
         }
     }
     
