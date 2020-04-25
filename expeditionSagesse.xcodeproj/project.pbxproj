@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0C488824544CA300CE1EFF /* expeditionSagesseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C488724544CA300CE1EFF /* expeditionSagesseTests.swift */; };
+		3D0C489024544FB700CE1EFF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D328B245351B2009643E4 /* Player.swift */; };
+		3D0C489124544FBA00CE1EFF /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D328F245355E4009643E4 /* Party.swift */; };
 		3D4D328C245351B2009643E4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D328B245351B2009643E4 /* Player.swift */; };
 		3D4D3290245355E4009643E4 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D328F245355E4009643E4 /* Party.swift */; };
 		82F5F71B2452F0E6001642A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F5F71A2452F0E6001642A3 /* AppDelegate.swift */; };
@@ -20,7 +23,20 @@
 		82F5F73C24533DC6001642A3 /* SelectQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F5F73B24533DC6001642A3 /* SelectQuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3D0C488A24544CA300CE1EFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82F5F70F2452F0E6001642A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82F5F7162452F0E6001642A3;
+			remoteInfo = expeditionSagesse;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3D0C488524544CA300CE1EFF /* expeditionSagesseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = expeditionSagesseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D0C488724544CA300CE1EFF /* expeditionSagesseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = expeditionSagesseTests.swift; sourceTree = "<group>"; };
+		3D0C488924544CA300CE1EFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D4D328B245351B2009643E4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		3D4D328F245355E4009643E4 /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 		82F5F7172452F0E6001642A3 /* expeditionSagesse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = expeditionSagesse.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +54,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3D0C488224544CA300CE1EFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		82F5F7142452F0E6001642A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -48,10 +71,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D0C488624544CA300CE1EFF /* expeditionSagesseTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D0C488724544CA300CE1EFF /* expeditionSagesseTests.swift */,
+				3D0C488924544CA300CE1EFF /* Info.plist */,
+			);
+			path = expeditionSagesseTests;
+			sourceTree = "<group>";
+		};
 		82F5F70E2452F0E6001642A3 = {
 			isa = PBXGroup;
 			children = (
 				82F5F7192452F0E6001642A3 /* expeditionSagesse */,
+				3D0C488624544CA300CE1EFF /* expeditionSagesseTests */,
 				82F5F7182452F0E6001642A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				82F5F7172452F0E6001642A3 /* expeditionSagesse.app */,
+				3D0C488524544CA300CE1EFF /* expeditionSagesseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +120,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3D0C488424544CA300CE1EFF /* expeditionSagesseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D0C488C24544CA300CE1EFF /* Build configuration list for PBXNativeTarget "expeditionSagesseTests" */;
+			buildPhases = (
+				3D0C488124544CA300CE1EFF /* Sources */,
+				3D0C488224544CA300CE1EFF /* Frameworks */,
+				3D0C488324544CA300CE1EFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D0C488B24544CA300CE1EFF /* PBXTargetDependency */,
+			);
+			name = expeditionSagesseTests;
+			productName = expeditionSagesseTests;
+			productReference = 3D0C488524544CA300CE1EFF /* expeditionSagesseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		82F5F7162452F0E6001642A3 /* expeditionSagesse */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82F5F72B2452F0E8001642A3 /* Build configuration list for PBXNativeTarget "expeditionSagesse" */;
@@ -109,10 +161,14 @@
 		82F5F70F2452F0E6001642A3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = ephiscience;
 				TargetAttributes = {
+					3D0C488424544CA300CE1EFF = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 82F5F7162452F0E6001642A3;
+					};
 					82F5F7162452F0E6001642A3 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -133,11 +189,19 @@
 			projectRoot = "";
 			targets = (
 				82F5F7162452F0E6001642A3 /* expeditionSagesse */,
+				3D0C488424544CA300CE1EFF /* expeditionSagesseTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3D0C488324544CA300CE1EFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		82F5F7152452F0E6001642A3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +216,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3D0C488124544CA300CE1EFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D0C489024544FB700CE1EFF /* Player.swift in Sources */,
+				3D0C489124544FBA00CE1EFF /* Party.swift in Sources */,
+				3D0C488824544CA300CE1EFF /* expeditionSagesseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		82F5F7132452F0E6001642A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -167,6 +241,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D0C488B24544CA300CE1EFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82F5F7162452F0E6001642A3 /* expeditionSagesse */;
+			targetProxy = 3D0C488A24544CA300CE1EFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		82F5F7202452F0E6001642A3 /* Main.storyboard */ = {
@@ -197,6 +279,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3D0C488D24544CA300CE1EFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8RUAB6F22X;
+				INFOPLIST_FILE = expeditionSagesseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.karim-lakhssassi.expeditionSagesseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/expeditionSagesse.app/expeditionSagesse";
+			};
+			name = Debug;
+		};
+		3D0C488E24544CA300CE1EFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8RUAB6F22X;
+				INFOPLIST_FILE = expeditionSagesseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.karim-lakhssassi.expeditionSagesseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/expeditionSagesse.app/expeditionSagesse";
+			};
+			name = Release;
+		};
 		82F5F7292452F0E8001642A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -354,6 +478,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3D0C488C24544CA300CE1EFF /* Build configuration list for PBXNativeTarget "expeditionSagesseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D0C488D24544CA300CE1EFF /* Debug */,
+				3D0C488E24544CA300CE1EFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		82F5F7122452F0E6001642A3 /* Build configuration list for PBXProject "expeditionSagesse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

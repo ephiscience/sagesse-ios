@@ -11,8 +11,8 @@ import Foundation
 public class Party {
     var players: [Player]
     var currentQuestion: Int = 0
-    var questionPlayers: [[Player]] = []
-    var criteriaPlayers: [[Player]] = []
+    var talkingPlayers: [[Player]] = []
+    var judgePlayers: [[Player]] = []
 
     public init(players: [Player]) {
         self.players = players
@@ -23,35 +23,61 @@ public class Party {
     }
 
     public func setTeams() {
-        for question in 1...8 {
-            setQuestionPlayers(question: question)
-            self.criteriaPlayers.append(getUnpickedPlayers(question: question))
+        for question in 0...7 {
+            self.talkingPlayers.append([])
+            setTalkingPlayers(question: question)
+            self.judgePlayers.append(getUnpickedPlayers(question: question))
         }
     }
 
-    private func setQuestionPlayers(question: Int) {
-        if question == 0 {
-            var questionPlayers: [Player] = []
-            for _ in 1...getQuestionPlayersNumber() {
-                questionPlayers.append(getUnpickedPlayers(question: 0)[Int.random(in: 0...getUnpickedPlayers(question: 0).count)])
+    private func setTalkingPlayers(question: Int) {
+        for _ in 1...getTalkingPlayersNumber() {
+            self.talkingPlayers[question].append(getTalkingPlayersWithLessQuestionsCount(question: question)[Int.random(in: 0...(getTalkingPlayersWithLessQuestionsCount(question: question).count - 1))])
+        }
+    }
+
+    private func getTalkingPlayersWithLessQuestionsCount(question: Int) -> [Player] {
+        var talkingPlayersQuestionsCount: [Int:Int] = [:]
+        for player in self.players {
+            talkingPlayersQuestionsCount[player.identifier] = getTalkingPlayersQuestionsCount(player: player, question: question)
+        }
+
+        var maxQuestionsCount: Int = 0
+        talkingPlayersQuestionsCount.forEach { (identifier: Int, count: Int) in
+            if count > maxQuestionsCount {
+                maxQuestionsCount = count
             }
-            self.questionPlayers.append(questionPlayers)
+        }
+
+        let talkingPlayersWithLessQuestionsCount = talkingPlayersQuestionsCount.filter { (questionsCountPerPlayer) -> Bool in
+            return questionsCountPerPlayer.value < maxQuestionsCount
+        }
+
+        if talkingPlayersWithLessQuestionsCount.isEmpty {
+            return getUnpickedPlayers(question: question)
         } else {
-            
+            let result = getUnpickedPlayers(question: question).filter { (player) -> Bool in
+                return talkingPlayersWithLessQuestionsCount.contains { (identifier: Int, count: Int) -> Bool in
+                    return identifier == player.identifier
+                }
+            }
+
+            return result
         }
     }
 
-    private func getQuestionPlayersQuestionCount(player: Player) -> Int {
+    private func getTalkingPlayersQuestionsCount(player: Player, question: Int) -> Int {
         var result: Int = 0
-        for questionPlayers in self.questionPlayers {
-            if questionPlayers.contains(where: { $0.identifier == player.identifier }) {
+        for currentQuestion in 0...question {
+            if self.talkingPlayers[currentQuestion].contains(where: { $0.identifier == player.identifier }) {
                 result += 1
             }
         }
+
         return result
     }
 
-    private func getQuestionPlayersNumber() -> Int {
+    private func getTalkingPlayersNumber() -> Int {
         switch self.players.count {
         case 3:
             return 2
@@ -69,8 +95,18 @@ public class Party {
     private func getUnpickedPlayers(question: Int) -> [Player] {
         var result: [Player] = []
         for player in self.players {
-            if !self.questionPlayers[question].contains(where: { $0.identifier == player.identifier }) && !self.criteriaPlayers[question].contains(where: { $0.identifier == player.identifier }) {
-                result.append(player)
+            if question + 1 > self.talkingPlayers.count {
+                if question + 1 > self.judgePlayers.count {
+                    result.append(player)
+                } else if !self.judgePlayers[question].contains(where: { $0.identifier == player.identifier }) {
+                    result.append(player)
+                }
+            } else if !self.talkingPlayers[question].contains(where: { $0.identifier == player.identifier }) {
+                if question + 1 > self.judgePlayers.count {
+                    result.append(player)
+                } else if !self.judgePlayers[question].contains(where: { $0.identifier == player.identifier }) {
+                    result.append(player)
+                }
             }
         }
         return result

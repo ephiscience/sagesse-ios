@@ -8,7 +8,12 @@
 
 import Foundation
 
-public struct Player {
+public class Player {
     var identifier: Int
     var name: String
+
+    public init(identifier: Int, name: String) {
+        self.identifier = identifier
+        self.name = name
+    }
 }
