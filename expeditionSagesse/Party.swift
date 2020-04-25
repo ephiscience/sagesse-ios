@@ -84,9 +84,9 @@ public class Party {
         case 4:
             return 2
         case 5:
-            return 3
+            return 2
         case 6:
-            return 3
+            return 2
         default:
             return -1
         }

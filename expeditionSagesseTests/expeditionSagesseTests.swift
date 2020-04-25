@@ -45,8 +45,8 @@ class expeditionSagesseTests: XCTestCase {
         let players: [Player] = [Player(identifier: 0, name: "Omar"), Player(identifier: 1, name: "Karim"), Player(identifier: 2, name: "Pleen"), Player(identifier: 3, name: "Lili"), Player(identifier: 4, name: "Julien")]
         let party: Party = Party(players: players)
         party.setTeams()
-        party.talkingPlayers.forEach({ XCTAssert($0.count == 3) })
-        party.judgePlayers.forEach({ XCTAssert($0.count == 2) })
+        party.talkingPlayers.forEach({ XCTAssert($0.count == 2) })
+        party.judgePlayers.forEach({ XCTAssert($0.count == 3) })
     }
 
     func testSixPlayersPartyTeamsSet() throws {
@@ -55,8 +55,8 @@ class expeditionSagesseTests: XCTestCase {
         let players: [Player] = [Player(identifier: 0, name: "Omar"), Player(identifier: 1, name: "Karim"), Player(identifier: 2, name: "Pleen"), Player(identifier: 3, name: "Lili"), Player(identifier: 4, name: "Julien"), Player(identifier: 5, name: "Matthieu")]
         let party: Party = Party(players: players)
         party.setTeams()
-        party.talkingPlayers.forEach({ XCTAssert($0.count == 3) })
-        party.judgePlayers.forEach({ XCTAssert($0.count == 3) })
+        party.talkingPlayers.forEach({ XCTAssert($0.count == 2) })
+        party.judgePlayers.forEach({ XCTAssert($0.count == 4) })
     }
 
     func testPerformanceExample() throws {
