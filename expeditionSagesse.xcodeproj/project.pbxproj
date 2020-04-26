@@ -12,6 +12,10 @@
 		3D0C489124544FBA00CE1EFF /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D328F245355E4009643E4 /* Party.swift */; };
 		3D4D328C245351B2009643E4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D328B245351B2009643E4 /* Player.swift */; };
 		3D4D3290245355E4009643E4 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D328F245355E4009643E4 /* Party.swift */; };
+		8288088E24548B9B0085C9EE /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8288088D24548B9B0085C9EE /* PlayerTableViewCell.swift */; };
+		828808902454A4640085C9EE /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8288088F2454A4640085C9EE /* AppConfiguration.swift */; };
+		828808932455A0D40085C9EE /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808922455A0D40085C9EE /* UIButton+Extension.swift */; };
+		828808952455A18F0085C9EE /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808942455A18F0085C9EE /* Helpers.swift */; };
 		82F5F71B2452F0E6001642A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F5F71A2452F0E6001642A3 /* AppDelegate.swift */; };
 		82F5F71F2452F0E6001642A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F5F71E2452F0E6001642A3 /* HomeViewController.swift */; };
 		82F5F7222452F0E6001642A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F5F7202452F0E6001642A3 /* Main.storyboard */; };
@@ -39,6 +43,10 @@
 		3D0C488924544CA300CE1EFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D4D328B245351B2009643E4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		3D4D328F245355E4009643E4 /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
+		8288088D24548B9B0085C9EE /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		8288088F2454A4640085C9EE /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		828808922455A0D40085C9EE /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		828808942455A18F0085C9EE /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		82F5F7172452F0E6001642A3 /* expeditionSagesse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = expeditionSagesse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F5F71A2452F0E6001642A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82F5F71E2452F0E6001642A3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +88,14 @@
 			path = expeditionSagesseTests;
 			sourceTree = "<group>";
 		};
+		828808912455A0BD0085C9EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				828808922455A0D40085C9EE /* UIButton+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		82F5F70E2452F0E6001642A3 = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +117,13 @@
 		82F5F7192452F0E6001642A3 /* expeditionSagesse */ = {
 			isa = PBXGroup;
 			children = (
+				828808912455A0BD0085C9EE /* Extensions */,
 				82F5F739245324B5001642A3 /* SceneDelegate.swift */,
 				82F5F71A2452F0E6001642A3 /* AppDelegate.swift */,
 				82F5F71E2452F0E6001642A3 /* HomeViewController.swift */,
+				8288088F2454A4640085C9EE /* AppConfiguration.swift */,
 				82F5F7372452F7A2001642A3 /* PlayersViewController.swift */,
+				8288088D24548B9B0085C9EE /* PlayerTableViewCell.swift */,
 				82F5F73B24533DC6001642A3 /* SelectQuestionViewController.swift */,
 				82F5F7202452F0E6001642A3 /* Main.storyboard */,
 				82F5F7232452F0E8001642A3 /* Assets.xcassets */,
@@ -113,6 +132,7 @@
 				82F5F7352452F723001642A3 /* Localizable.strings */,
 				3D4D328B245351B2009643E4 /* Player.swift */,
 				3D4D328F245355E4009643E4 /* Party.swift */,
+				828808942455A18F0085C9EE /* Helpers.swift */,
 			);
 			path = expeditionSagesse;
 			sourceTree = "<group>";
@@ -230,10 +250,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				828808902454A4640085C9EE /* AppConfiguration.swift in Sources */,
 				3D4D328C245351B2009643E4 /* Player.swift in Sources */,
 				82F5F71F2452F0E6001642A3 /* HomeViewController.swift in Sources */,
+				828808932455A0D40085C9EE /* UIButton+Extension.swift in Sources */,
+				828808952455A18F0085C9EE /* Helpers.swift in Sources */,
 				82F5F7382452F7A2001642A3 /* PlayersViewController.swift in Sources */,
 				82F5F73C24533DC6001642A3 /* SelectQuestionViewController.swift in Sources */,
+				8288088E24548B9B0085C9EE /* PlayerTableViewCell.swift in Sources */,
 				82F5F71B2452F0E6001642A3 /* AppDelegate.swift in Sources */,
 				3D4D3290245355E4009643E4 /* Party.swift in Sources */,
 				82F5F73A245324B5001642A3 /* SceneDelegate.swift in Sources */,
