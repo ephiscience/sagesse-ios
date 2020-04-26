@@ -28,23 +28,6 @@ class SelectQuestionViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-        // TO BE REMOVED
-//        let player1 = Player(identifier: 0, name: "Omar")
-//        player1.avatar = UIImage(named: "avatarLion")
-//        let player2 = Player(identifier: 1, name: "Karim")
-//        player2.avatar = UIImage(named: "avatarTiger")
-//        let player3 = Player(identifier: 2, name: "Pleen")
-//        player3.avatar = UIImage(named: "avatarSheep")
-//        let player4 = Player(identifier: 3, name: "Lili")
-//        player4.avatar = UIImage(named: "avatarTurtle")
-//        let player5 = Player(identifier: 4, name: "Julien")
-//        player5.avatar = UIImage(named: "avatarEagle")
-//        let player6 = Player(identifier: 5, name: "Matthieu")
-//        player6.avatar = UIImage(named: "avatarElephant")
-//        let players: [Player] = [player1, player2, player3, player4, player5, player6]
-//        let currentParty: Party = Party(players: players)
-//        currentParty.setTeams()
-//        self.party = currentParty
 
         guard let party = self.party else {
             return
@@ -57,7 +40,7 @@ class SelectQuestionViewController: UIViewController {
         titleLabel.text = String.localizedStringWithFormat(NSLocalizedString("selectQuestion.title", comment: "Question a/n"), "\(party.currentQuestion + 1)", "8")
 
         talkingPlayersView.layer.borderWidth = 2
-        talkingPlayersView.layer.borderColor = UIColor.gray.cgColor
+        talkingPlayersView.layer.borderColor = Helper.UIColorFromHex(0x02AAB0).cgColor
         talkingPlayersView.backgroundColor = .white
 
         talkingPlayersLabel.text = NSLocalizedString("selectQuestion.talkingPlayersLabel", comment: "Orators")
@@ -70,7 +53,7 @@ class SelectQuestionViewController: UIViewController {
         }
 
         judgePlayersView.layer.borderWidth = 2
-        judgePlayersView.layer.borderColor = UIColor.gray.cgColor
+        judgePlayersView.layer.borderColor = Helper.UIColorFromHex(0x02AAB0).cgColor
         judgePlayersView.backgroundColor = .white
 
         judgePlayersLabel.text = NSLocalizedString("selectQuestion.judgePlayersLabel", comment: "Auditors")
