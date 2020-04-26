@@ -38,11 +38,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yw-EJ-2w9">
-                                <rect key="frame" x="16" y="611" width="343" height="36"/>
+                                <rect key="frame" x="16" y="607" width="343" height="40"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="RsM-kf-dwX"/>
+                                    <constraint firstAttribute="height" constant="40" id="RsM-kf-dwX"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="Continuer">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -51,9 +52,9 @@
                                 </connections>
                             </button>
                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJ7-Xr-xrB">
-                                <rect key="frame" x="27.5" y="212.5" width="320" height="170"/>
+                                <rect key="frame" x="27.5" y="212.5" width="320" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="u3T-LM-OOW"/>
+                                    <constraint firstAttribute="height" constant="160" id="u3T-LM-OOW"/>
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sélectionnez le nombre de joueurs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXv-0Z-KpW">
@@ -63,15 +64,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisissez le niveau de difficulté" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRz-i9-7yE">
-                                <rect key="frame" x="65" y="412.5" width="245" height="24"/>
+                                <rect key="frame" x="65" y="402.5" width="245" height="24"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsb-RS-C93">
-                                <rect key="frame" x="27.5" y="444.5" width="320" height="170"/>
+                                <rect key="frame" x="27.5" y="434.5" width="320" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="USZ-BK-mXg"/>
+                                    <constraint firstAttribute="height" constant="160" id="USZ-BK-mXg"/>
                                 </constraints>
                             </pickerView>
                         </subviews>
@@ -97,6 +98,7 @@
                     <connections>
                         <outlet property="gameDifficultyLabel" destination="sRz-i9-7yE" id="r0U-1f-qmo"/>
                         <outlet property="gameDifficultyPicker" destination="hsb-RS-C93" id="MQb-l9-vJF"/>
+                        <outlet property="nextStepButton" destination="5Yw-EJ-2w9" id="55r-M4-ADK"/>
                         <outlet property="playersNumberPicker" destination="qJ7-Xr-xrB" id="eSn-Pw-osz"/>
                         <outlet property="playersNumberTitle" destination="cXv-0Z-KpW" id="Vcn-hV-q7C"/>
                     </connections>
@@ -117,7 +119,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AmB-rG-T0F">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="629"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="633"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saisissez les noms des joueurs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOw-vI-7zz">
                                                 <rect key="frame" x="73" y="20" width="229" height="33"/>
@@ -128,7 +130,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uqm-z1-GYX">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uqm-z1-GYX">
                                                 <rect key="frame" x="0.0" y="73" width="375" height="480"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
@@ -150,7 +152,7 @@
                                                                     <rect key="frame" x="83" y="22" width="251" height="34"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
                                                                 </textField>
                                                             </subviews>
                                                         </tableViewCellContentView>
@@ -165,12 +167,13 @@
                                                     <outlet property="delegate" destination="t5H-su-NIB" id="kwv-aI-D7K"/>
                                                 </connections>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-C3-FlF">
-                                                <rect key="frame" x="16" y="573" width="343" height="36"/>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-C3-FlF">
+                                                <rect key="frame" x="16" y="573" width="343" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="36" id="rCG-Hk-rcj"/>
+                                                    <constraint firstAttribute="height" constant="40" id="rCG-Hk-rcj"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Lancer la partie">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>

@@ -11,5 +11,5 @@ import UIKit
 
 
 class SelectQuestionViewController: UIViewController {
-    
+   var players: [Player] = []
 }

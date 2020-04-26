@@ -38,6 +38,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var gameDifficultyLabel: UILabel!
     @IBOutlet weak var gameDifficultyPicker: UIPickerView!
     
+    @IBOutlet weak var nextStepButton: UIButton!
+    
     let difficultyLevels = GameSettingsProvider.getDifficultyLevels()
     
     override func viewDidLoad() {
@@ -48,6 +50,7 @@ class HomeViewController: UIViewController {
         gameDifficultyPicker.delegate = self
         gameDifficultyPicker.dataSource = self
         
+        self.nextStepButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -88,6 +91,25 @@ extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             return difficultyLevels[row].name
         }
  
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView{
+
+        var label: UILabel
+        if let view = view as? UILabel { label = view }
+        else { label = UILabel() }
+
+        label.font = UIFont(name: "Avenir-Bold", size: 13.0)
+        
+        if pickerView.tag == 1 {
+            label.text = String(possiblePlayersNumber[row])
+        } else {
+           label.text = difficultyLevels[row].name
+        }
+
+        label.textAlignment = .center
+        return label
+
     }
     
     

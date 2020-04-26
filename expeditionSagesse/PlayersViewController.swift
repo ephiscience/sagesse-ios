@@ -20,7 +20,7 @@ class PlayersViewController: UIViewController {
     
     var playersNumber : Int = 0
     var players : [Player] = []
-    let imageNames = ["horse", "cow", "goose", "lion", "girafe", "elephant"]
+    var imageNames = ["horse", "cow", "goose", "lion", "girafe", "elephant"]
     
     let cellHeight = 80
     
@@ -32,6 +32,7 @@ class PlayersViewController: UIViewController {
         enterPlayersNamesLabel.text = NSLocalizedString("players.choose.name.title", comment: "Enter players name")
         startGameButton.setTitle( NSLocalizedString("button.start.game", comment: "Start the game"), for: .normal)
         
+        imageNames.shuffle()
         for i in 0..<playersNumber {
           let player = Player(identifier: i+1, name: nil, imageName: imageNames[i])
             players.append(player)
@@ -39,11 +40,25 @@ class PlayersViewController: UIViewController {
         
         tableviewHeightConstraint.constant = CGFloat(playersNumber * cellHeight)
         
+        self.startGameButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if(segue.identifier == SegueIdentifier.ChoosePlayersNamesSegue.rawValue) {
+            
+            let selectQuestionController : SelectQuestionViewController = segue.destination as! SelectQuestionViewController
+            
+            selectQuestionController.players = self.players
+            
+        }
+    }
     
+    // MARK: - Keyboard Management
     @objc func keyboardWillShow(notification:NSNotification){
 
         let userInfo = notification.userInfo!
@@ -60,29 +75,61 @@ class PlayersViewController: UIViewController {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollview.contentInset = contentInset
     }
+    
+    
 }
 
 
 extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - UITableViewDataSource
-       
-       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-          
-           
-           return playersNumber
-       }
-       
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return playersNumber
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: CellReuseIdentifier, for: indexPath) as! PlayerTableViewCell
         let player = players[indexPath.row]
         cell.configure(withPlayer: player)
-        
+        cell.playerNameTextField.delegate = self
         
         return cell
     }
+   
+    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
 }
 
 extension PlayersViewController : UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let lastPlayerTag = players.last?.identifier
+        if textField.tag == lastPlayerTag {
+            textField.resignFirstResponder()
+            return false
+        } else {
+           let currentPlayerTag = textField.tag
+            let nextCell = tableview.cellForRow(at: IndexPath(row: currentPlayerTag, section: 0)) as? PlayerTableViewCell
+            nextCell?.playerNameTextField.becomeFirstResponder()
+        }
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let currentPlayerTag = textField.tag
+        var player = players[currentPlayerTag-1]
+        player.name = textField.text
+        players[currentPlayerTag-1] = player
+        
+        for i in 0..<playersNumber {
+            print("player \(i) : \(players[i].name ?? "" )")
+        }
+        
+        let playersWithName = players.filter( {$0.name != nil && $0.name != "" })
+        startGameButton.isEnabled = playersWithName.count == playersNumber
+    }
     
 }

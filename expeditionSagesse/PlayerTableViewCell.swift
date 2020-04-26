@@ -29,8 +29,6 @@ class PlayerTableViewCell : UITableViewCell {
         }
         
         playerNameTextField.placeholder =  String(format:NSLocalizedString("player.name.placeholder", comment: "Player name"), player.identifier)
-        
-      
-        
+        playerNameTextField.tag = player.identifier
     }
 }
