@@ -113,83 +113,114 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uqm-z1-GYX">
-                                <rect key="frame" x="0.0" y="107.5" width="375" height="480"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NB-lb-ip6">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AmB-rG-T0F">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="629"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saisissez les noms des joueurs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOw-vI-7zz">
+                                                <rect key="frame" x="73" y="20" width="229" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="a0Y-q4-6iv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uqm-z1-GYX">
+                                                <rect key="frame" x="0.0" y="73" width="375" height="480"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="480" id="uVn-5d-qa4"/>
+                                                </constraints>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerTableViewCellId" rowHeight="80" id="Aog-bZ-JYb" customClass="PlayerTableViewCell" customModule="expeditionSagesse" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aog-bZ-JYb" id="cgI-FC-QcF">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdL-EF-cUN">
+                                                                    <rect key="frame" x="15" y="9" width="60" height="60"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom du joueur X" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Otd-wf-0Tl">
+                                                                    <rect key="frame" x="83" y="22" width="251" height="34"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                                                </textField>
+                                                            </subviews>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="playerImageView" destination="fdL-EF-cUN" id="Mm5-5b-vsD"/>
+                                                            <outlet property="playerNameTextField" destination="Otd-wf-0Tl" id="bgi-2q-Kq4"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="t5H-su-NIB" id="iR3-Q3-ZqI"/>
+                                                    <outlet property="delegate" destination="t5H-su-NIB" id="kwv-aI-D7K"/>
+                                                </connections>
+                                            </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-C3-FlF">
+                                                <rect key="frame" x="16" y="573" width="343" height="36"/>
+                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="rCG-Hk-rcj"/>
+                                                </constraints>
+                                                <state key="normal" title="Lancer la partie">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="nmU-vw-6g3" kind="show" id="Rpu-lJ-PcJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="nOw-vI-7zz" firstAttribute="top" secondItem="AmB-rG-T0F" secondAttribute="top" constant="20" id="8Tq-8c-tac"/>
+                                            <constraint firstAttribute="trailing" secondItem="uqm-z1-GYX" secondAttribute="trailing" id="Lw7-dF-34v"/>
+                                            <constraint firstAttribute="trailing" secondItem="ryx-C3-FlF" secondAttribute="trailing" constant="16" id="NqH-6b-ctT"/>
+                                            <constraint firstAttribute="bottom" secondItem="ryx-C3-FlF" secondAttribute="bottom" constant="20" id="TQO-7O-avp"/>
+                                            <constraint firstItem="nOw-vI-7zz" firstAttribute="centerX" secondItem="AmB-rG-T0F" secondAttribute="centerX" id="ecx-qp-JZh"/>
+                                            <constraint firstItem="ryx-C3-FlF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uqm-z1-GYX" secondAttribute="bottom" constant="20" id="kDi-ml-EsJ"/>
+                                            <constraint firstItem="uqm-z1-GYX" firstAttribute="leading" secondItem="AmB-rG-T0F" secondAttribute="leading" id="oxY-ve-xgQ"/>
+                                            <constraint firstItem="uqm-z1-GYX" firstAttribute="top" secondItem="nOw-vI-7zz" secondAttribute="bottom" constant="20" id="t40-e5-otw"/>
+                                            <constraint firstItem="ryx-C3-FlF" firstAttribute="leading" secondItem="AmB-rG-T0F" secondAttribute="leading" constant="16" id="vbK-xR-j7T"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="480" id="uVn-5d-qa4"/>
+                                    <constraint firstItem="AmB-rG-T0F" firstAttribute="leading" secondItem="3NB-lb-ip6" secondAttribute="leading" id="82X-60-qsO"/>
+                                    <constraint firstAttribute="trailing" secondItem="AmB-rG-T0F" secondAttribute="trailing" id="Dmw-xF-lqI"/>
+                                    <constraint firstAttribute="width" secondItem="AmB-rG-T0F" secondAttribute="width" id="Y6e-mS-VNj"/>
+                                    <constraint firstItem="AmB-rG-T0F" firstAttribute="top" secondItem="3NB-lb-ip6" secondAttribute="top" id="d7U-3G-1kz"/>
+                                    <constraint firstAttribute="bottom" secondItem="AmB-rG-T0F" secondAttribute="bottom" id="jfU-V1-AFM"/>
+                                    <constraint firstItem="AmB-rG-T0F" firstAttribute="height" secondItem="3NB-lb-ip6" secondAttribute="height" priority="250" id="ra5-5j-QLn"/>
                                 </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerTableViewCellId" rowHeight="80" id="Aog-bZ-JYb" customClass="PlayerTableViewCell" customModule="expeditionSagesse" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aog-bZ-JYb" id="cgI-FC-QcF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdL-EF-cUN">
-                                                    <rect key="frame" x="15" y="9" width="60" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom du joueur X" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Otd-wf-0Tl">
-                                                    <rect key="frame" x="83" y="22" width="251" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="playerImageView" destination="fdL-EF-cUN" id="Mm5-5b-vsD"/>
-                                            <outlet property="playerNameTextField" destination="Otd-wf-0Tl" id="bgi-2q-Kq4"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="t5H-su-NIB" id="iR3-Q3-ZqI"/>
-                                    <outlet property="delegate" destination="t5H-su-NIB" id="kwv-aI-D7K"/>
-                                </connections>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-C3-FlF">
-                                <rect key="frame" x="16" y="611" width="343" height="36"/>
-                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="rCG-Hk-rcj"/>
-                                </constraints>
-                                <state key="normal" title="Lancer la partie">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="nmU-vw-6g3" kind="show" id="Rpu-lJ-PcJ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saisissez les noms des joueurs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOw-vI-7zz">
-                                <rect key="frame" x="73" y="64" width="229" height="23.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <viewLayoutGuide key="contentLayoutGuide" id="CaD-Zd-wCs"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="clE-jl-qTQ"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="uqm-z1-GYX" firstAttribute="centerX" secondItem="nOw-vI-7zz" secondAttribute="centerX" id="3bS-Hg-Me2"/>
-                            <constraint firstItem="gC7-2i-vqt" firstAttribute="trailing" secondItem="ryx-C3-FlF" secondAttribute="trailing" constant="16" id="9lQ-3e-Ysz"/>
-                            <constraint firstItem="nOw-vI-7zz" firstAttribute="centerX" secondItem="w0o-yU-BDr" secondAttribute="centerX" id="CJd-LA-0pE"/>
-                            <constraint firstItem="ryx-C3-FlF" firstAttribute="leading" secondItem="gC7-2i-vqt" secondAttribute="leading" constant="16" id="Ecu-eF-6tv"/>
-                            <constraint firstItem="ryx-C3-FlF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uqm-z1-GYX" secondAttribute="bottom" constant="20" id="O8Q-Kk-4eY"/>
-                            <constraint firstItem="nOw-vI-7zz" firstAttribute="top" secondItem="gC7-2i-vqt" secondAttribute="top" constant="20" id="Q4D-L5-vxP"/>
-                            <constraint firstItem="uqm-z1-GYX" firstAttribute="leading" secondItem="gC7-2i-vqt" secondAttribute="leading" id="RyC-8N-nlb"/>
-                            <constraint firstItem="uqm-z1-GYX" firstAttribute="top" secondItem="nOw-vI-7zz" secondAttribute="bottom" constant="20" id="mfX-By-gFN"/>
-                            <constraint firstItem="gC7-2i-vqt" firstAttribute="bottom" secondItem="ryx-C3-FlF" secondAttribute="bottom" constant="20" id="qVL-oR-bo2"/>
-                            <constraint firstItem="ryx-C3-FlF" firstAttribute="centerX" secondItem="w0o-yU-BDr" secondAttribute="centerX" id="rTq-7x-f8B"/>
+                            <constraint firstItem="3NB-lb-ip6" firstAttribute="top" secondItem="gC7-2i-vqt" secondAttribute="top" id="Nyo-Lg-MjN"/>
+                            <constraint firstItem="3NB-lb-ip6" firstAttribute="bottom" secondItem="gC7-2i-vqt" secondAttribute="bottom" id="iVL-ON-jKQ"/>
+                            <constraint firstItem="3NB-lb-ip6" firstAttribute="leading" secondItem="w0o-yU-BDr" secondAttribute="leading" id="uuP-PT-hZb"/>
+                            <constraint firstAttribute="trailing" secondItem="3NB-lb-ip6" secondAttribute="trailing" id="vFx-Yg-fIA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gC7-2i-vqt"/>
                     </view>
                     <navigationItem key="navigationItem" id="wak-Xp-CGp"/>
                     <connections>
                         <outlet property="enterPlayersNamesLabel" destination="nOw-vI-7zz" id="cc6-tm-Lqi"/>
+                        <outlet property="scrollview" destination="3NB-lb-ip6" id="frj-YT-csr"/>
                         <outlet property="startGameButton" destination="ryx-C3-FlF" id="aSZ-xs-qd9"/>
                         <outlet property="tableview" destination="uqm-z1-GYX" id="f6o-Cp-Z6h"/>
+                        <outlet property="tableviewHeightConstraint" destination="uVn-5d-qa4" id="NyY-oc-S06"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-um-j2E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

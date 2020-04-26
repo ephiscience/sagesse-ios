@@ -11,13 +11,18 @@ import UIKit
 
 class PlayersViewController: UIViewController {
     
-  @IBOutlet weak var enterPlayersNamesLabel: UILabel!
-  @IBOutlet weak var tableview: UITableView!
-  @IBOutlet weak var startGameButton: UIButton!
+    @IBOutlet weak var scrollview: UIScrollView!
+    @IBOutlet weak var enterPlayersNamesLabel: UILabel!
+    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var startGameButton: UIButton!
+    
+    @IBOutlet weak var tableviewHeightConstraint: NSLayoutConstraint!
     
     var playersNumber : Int = 0
     var players : [Player] = []
     let imageNames = ["horse", "cow", "goose", "lion", "girafe", "elephant"]
+    
+    let cellHeight = 80
     
     let CellReuseIdentifier = "PlayerTableViewCellId"
     
@@ -31,6 +36,29 @@ class PlayersViewController: UIViewController {
           let player = Player(identifier: i+1, name: nil, imageName: imageNames[i])
             players.append(player)
         }
+        
+        tableviewHeightConstraint.constant = CGFloat(playersNumber * cellHeight)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
+    @objc func keyboardWillShow(notification:NSNotification){
+
+        let userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+
+        var contentInset:UIEdgeInsets = self.scrollview.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollview.contentInset = contentInset
+    }
+
+    @objc func keyboardWillHide(notification:NSNotification){
+
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollview.contentInset = contentInset
     }
 }
 
@@ -53,4 +81,8 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+}
+
+extension PlayersViewController : UITextFieldDelegate {
+    
 }
