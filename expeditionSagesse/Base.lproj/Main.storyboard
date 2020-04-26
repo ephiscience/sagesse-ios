@@ -178,7 +178,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="nmU-vw-6g3" kind="show" id="Rpu-lJ-PcJ"/>
+                                                    <segue destination="nmU-vw-6g3" kind="show" identifier="StartTheGameSegue" id="Rpu-lJ-PcJ"/>
                                                 </connections>
                                             </button>
                                         </subviews>

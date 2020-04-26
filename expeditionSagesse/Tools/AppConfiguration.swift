@@ -10,5 +10,6 @@ import Foundation
 import UIKit
 
 public enum SegueIdentifier: String {
-   case  ChoosePlayersNamesSegue = "ChoosePlayersNamesSegue"
+    case ChoosePlayersNamesSegue = "ChoosePlayersNamesSegue"
+    case StartTheGameSegue = "StartTheGameSegue"
 }

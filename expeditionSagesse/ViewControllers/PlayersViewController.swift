@@ -49,7 +49,7 @@ class PlayersViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        if(segue.identifier == SegueIdentifier.ChoosePlayersNamesSegue.rawValue) {
+        if(segue.identifier == SegueIdentifier.StartTheGameSegue.rawValue) {
             
             let selectQuestionController : SelectQuestionViewController = segue.destination as! SelectQuestionViewController
             let newParty: Party = Party(players: self.players)
