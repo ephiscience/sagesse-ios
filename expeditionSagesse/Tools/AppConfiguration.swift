@@ -9,9 +9,12 @@
 import Foundation
 import UIKit
 
+public enum ViewControllersID: String {
+    case SelectQuestionVC = "SelectQuestionViewControllerID"
+}
+
 public enum SegueIdentifier: String {
     case ChoosePlayersNamesSegue = "ChoosePlayersNamesSegue"
-    case StartTheGameSegue = "StartTheGameSegue"
 }
 
 struct DifficultyLevel {

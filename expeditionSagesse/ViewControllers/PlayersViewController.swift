@@ -45,16 +45,14 @@ class PlayersViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        if(segue.identifier == SegueIdentifier.StartTheGameSegue.rawValue) {
-            
-            let selectQuestionController : SelectQuestionViewController = segue.destination as! SelectQuestionViewController
+
+    @IBAction func startTheGame() {
+        if let selectQuestionController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllersID.SelectQuestionVC.rawValue) as? SelectQuestionViewController {
             let newParty: Party = Party(players: self.players)
             newParty.setTeams()
             selectQuestionController.party = newParty
+            selectQuestionController.modalPresentationStyle = .fullScreen
+            self.present(selectQuestionController, animated: true, completion: nil)
         }
     }
     

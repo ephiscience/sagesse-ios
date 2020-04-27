@@ -18,5 +18,6 @@
 "selectQuestion.title" = "Question %@/%@";
 "selectQuestion.talkingPlayersLabel" = "Orateurs";
 "selectQuestion.judgePlayersLabel" = "Auditeurs";
+"selectQuestion.selectQuestionLabel" = "Vous devez choisir la question qui sera traitée parmi les deux suivantes.";
 "player.name.placeholder" = "Nom du joueur %1$d";
 "button.start.game" = "Lancer la partie";

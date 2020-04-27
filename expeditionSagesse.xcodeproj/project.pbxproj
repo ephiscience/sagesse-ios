@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D0C488824544CA300CE1EFF /* expeditionSagesseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C488724544CA300CE1EFF /* expeditionSagesseTests.swift */; };
+		3D1CD106245740C700C6D250 /* QuestionCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CD105245740C700C6D250 /* QuestionCardView.xib */; };
+		3D1CD108245740D500C6D250 /* QuestionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CD107245740D500C6D250 /* QuestionCardView.swift */; };
 		3D9DE9E12454898E002DCC67 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D9DE9E02454898E002DCC67 /* PlayerView.xib */; };
 		3D9DE9E324548B21002DCC67 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9DE9E224548B21002DCC67 /* PlayerView.swift */; };
 		8288089A2455D38F0085C9EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808972455D38F0085C9EE /* HomeViewController.swift */; };
@@ -41,6 +43,8 @@
 		3D0C488524544CA300CE1EFF /* expeditionSagesseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = expeditionSagesseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0C488724544CA300CE1EFF /* expeditionSagesseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = expeditionSagesseTests.swift; sourceTree = "<group>"; };
 		3D0C488924544CA300CE1EFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D1CD105245740C700C6D250 /* QuestionCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCardView.xib; sourceTree = "<group>"; };
+		3D1CD107245740D500C6D250 /* QuestionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCardView.swift; sourceTree = "<group>"; };
 		3D9DE9E02454898E002DCC67 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		3D9DE9E224548B21002DCC67 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		828808972455D38F0085C9EE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				828808A92455D4680085C9EE /* PlayerTableViewCell.swift */,
 				3D9DE9E02454898E002DCC67 /* PlayerView.xib */,
 				3D9DE9E224548B21002DCC67 /* PlayerView.swift */,
+				3D1CD105245740C700C6D250 /* QuestionCardView.xib */,
+				3D1CD107245740D500C6D250 /* QuestionCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 			files = (
 				82F5F7272452F0E8001642A3 /* LaunchScreen.storyboard in Resources */,
 				82F5F7332452F723001642A3 /* Localizable.strings in Resources */,
+				3D1CD106245740C700C6D250 /* QuestionCardView.xib in Resources */,
 				82F5F7242452F0E8001642A3 /* Assets.xcassets in Resources */,
 				82F5F7222452F0E6001642A3 /* Main.storyboard in Resources */,
 				3D9DE9E12454898E002DCC67 /* PlayerView.xib in Resources */,
@@ -286,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				828808AA2455D4690085C9EE /* PlayerTableViewCell.swift in Sources */,
+				3D1CD108245740D500C6D250 /* QuestionCardView.swift in Sources */,
 				8288089B2455D38F0085C9EE /* PlayersViewController.swift in Sources */,
 				8288089C2455D38F0085C9EE /* SelectQuestionViewController.swift in Sources */,
 				3D9DE9E324548B21002DCC67 /* PlayerView.swift in Sources */,

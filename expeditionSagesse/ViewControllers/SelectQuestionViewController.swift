@@ -20,6 +20,9 @@ class SelectQuestionViewController: UIViewController {
     @IBOutlet weak var judgePlayersView: UIView!
     @IBOutlet weak var judgePlayersLabel: UILabel!
     @IBOutlet weak var judgePlayersStackView: UIStackView!
+    @IBOutlet weak var questionSelectionView: UIView!
+    @IBOutlet weak var questionSelectionLabel: UILabel!
+    @IBOutlet weak var questionSelectionStackView: UIStackView!
     
     public var party: Party?
 
@@ -63,6 +66,21 @@ class SelectQuestionViewController: UIViewController {
                 playerView.configure(playerName: playerName, playerAvatar: playerAvatar)
                 judgePlayersStackView.addArrangedSubview(playerView)
             }
+        }
+
+        questionSelectionView.layer.borderWidth = 2
+        questionSelectionView.layer.borderColor = Helper.UIColorFromHex(0x02AAB0).cgColor
+        questionSelectionView.backgroundColor = .white
+
+        questionSelectionLabel.text = NSLocalizedString("selectQuestion.selectQuestionLabel", comment: "Orators")
+
+        if let question1View = Bundle.main.loadNibNamed("QuestionCardView", owner: self, options: nil)?[0] as? QuestionCardView {
+            question1View.configure(question: "Y a t-il des vegans qui aiment la viande?")
+            questionSelectionStackView.addArrangedSubview(question1View)
+        }
+        if let question2View = Bundle.main.loadNibNamed("QuestionCardView", owner: self, options: nil)?[0] as? QuestionCardView {
+            question2View.configure(question: "Peut-on élever et consommer des animaux de façon éthique?Peut-on élever et consommer des animaux de façon éthique?Peut-on élever et consommer des animaux de façon éthique?")
+            questionSelectionStackView.addArrangedSubview(question2View)
         }
     }
 }
