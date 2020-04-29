@@ -20,8 +20,8 @@ class PlayerTableViewCell : UITableViewCell {
     }
     
     func configure(withPlayer player: Player) {
-        if let imageName = player.imageName {
-            playerImageView.image = UIImage(named: imageName)
+        if let avatar = player.avatar {
+            playerImageView.image = avatar
         }
         
         if let playerName = player.name {

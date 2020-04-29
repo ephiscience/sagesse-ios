@@ -16,3 +16,7 @@
 "players.choose.name.title" = "Enter the players name";
 "player.name.placeholder" = "Name of player %1$d";
 "button.start.game" = "Start the game";
+"selectQuestion.title" = "Question %@/%@";
+"selectQuestion.talkingPlayersLabel" = "Orators";
+"selectQuestion.judgePlayersLabel" = "Auditors";
+"selectQuestion.selectQuestionLabel" = "You must choose the question that will be discussed among the two below.";

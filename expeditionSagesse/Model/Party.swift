@@ -11,8 +11,8 @@ import Foundation
 public class Party {
     var players: [Player]
     var currentQuestion: Int = 0
-    var talkingPlayers: [[Player]] = []
-    var judgePlayers: [[Player]] = []
+    public var talkingPlayers: [[Player]] = []
+    public var judgePlayers: [[Player]] = []
 
     public init(players: [Player]) {
         self.players = players
