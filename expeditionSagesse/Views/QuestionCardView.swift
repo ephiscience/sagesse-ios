@@ -15,9 +15,9 @@ public class QuestionCardView: UIView {
     @IBOutlet weak var questionLabel: UILabel!
 
     public func configure(question: String) {
-        if let cardsBackgroundImage = UIImage(named: "cards-background") {
-            backgroundView.backgroundColor = UIColor(patternImage: cardsBackgroundImage)
-        }
+//        if let cardsBackgroundImage = UIImage(named: "QuestionFrame") {
+//            backgroundView.backgroundColor = UIColor(patternImage: cardsBackgroundImage)
+//        }
 
         backgroundView.layer.borderWidth = 2
         backgroundView.layer.borderColor = Helper.UIColorFromHex(0x02AAB0).cgColor
