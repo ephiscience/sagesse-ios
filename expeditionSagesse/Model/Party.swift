@@ -13,9 +13,11 @@ public class Party {
     var currentQuestion: Int = 0
     public var talkingPlayers: [[Player]] = []
     public var judgePlayers: [[Player]] = []
+    public var criterias: [String] = []
 
-    public init(players: [Player]) {
+    public init(players: [Player], criterias: [String]) {
         self.players = players
+        self.criterias = criterias
     }
 
     public func nextQuestion() {

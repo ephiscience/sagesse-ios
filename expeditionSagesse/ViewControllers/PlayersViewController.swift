@@ -19,6 +19,7 @@ class PlayersViewController: UIViewController {
     @IBOutlet weak var tableviewHeightConstraint: NSLayoutConstraint!
     
     var playersNumber : Int = 0
+    var numberOfCriterias : Int = 0
     var players : [Player] = []
     var imageNames = ["horse", "cow", "goose", "lion", "girafe", "elephant"]
     
@@ -48,7 +49,9 @@ class PlayersViewController: UIViewController {
 
     @IBAction func startTheGame() {
         if let selectQuestionController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllersID.SelectQuestionVC.rawValue) as? SelectQuestionViewController {
-            let newParty: Party = Party(players: self.players)
+            let criterias  = AppConfiguration.getCriteriasCards(numberOfCards: numberOfCriterias)
+            let newParty: Party = Party(players: self.players, criterias: criterias)
+           
             newParty.setTeams()
             selectQuestionController.party = newParty
             selectQuestionController.modalPresentationStyle = .fullScreen

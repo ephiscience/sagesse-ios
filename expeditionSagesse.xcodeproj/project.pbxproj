@@ -21,6 +21,7 @@
 		828808A72455D45B0085C9EE /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808A32455D45B0085C9EE /* AppConfiguration.swift */; };
 		828808AA2455D4690085C9EE /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808A92455D4680085C9EE /* PlayerTableViewCell.swift */; };
 		828808AD2455D57D0085C9EE /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808AC2455D57D0085C9EE /* UIButton+Extension.swift */; };
+		82D412CE2459C061003BA5A3 /* criterias.json in Resources */ = {isa = PBXBuildFile; fileRef = 82D412CD2459C061003BA5A3 /* criterias.json */; };
 		82F5F71B2452F0E6001642A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F5F71A2452F0E6001642A3 /* AppDelegate.swift */; };
 		82F5F7222452F0E6001642A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F5F7202452F0E6001642A3 /* Main.storyboard */; };
 		82F5F7242452F0E8001642A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F5F7232452F0E8001642A3 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		828808A32455D45B0085C9EE /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		828808A92455D4680085C9EE /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		828808AC2455D57D0085C9EE /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		82D412CD2459C061003BA5A3 /* criterias.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = criterias.json; sourceTree = "<group>"; };
 		82F5F7172452F0E6001642A3 /* expeditionSagesse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = expeditionSagesse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F5F71A2452F0E6001642A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82F5F7212452F0E6001642A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,6 +145,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		82D412CC2459C04B003BA5A3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				82D412CD2459C061003BA5A3 /* criterias.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		82F5F70E2452F0E6001642A3 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +174,7 @@
 		82F5F7192452F0E6001642A3 /* expeditionSagesse */ = {
 			isa = PBXGroup;
 			children = (
+				82D412CC2459C04B003BA5A3 /* Resources */,
 				828808A12455D40F0085C9EE /* Tools */,
 				3D9EB373245475FB005E3CAC /* Model */,
 				3D9DE9DF245488E5002DCC67 /* Views */,
@@ -272,6 +283,7 @@
 				82F5F7332452F723001642A3 /* Localizable.strings in Resources */,
 				3D1CD106245740C700C6D250 /* QuestionCardView.xib in Resources */,
 				82F5F7242452F0E8001642A3 /* Assets.xcassets in Resources */,
+				82D412CE2459C061003BA5A3 /* criterias.json in Resources */,
 				82F5F7222452F0E6001642A3 /* Main.storyboard in Resources */,
 				3D9DE9E12454898E002DCC67 /* PlayerView.xib in Resources */,
 			);

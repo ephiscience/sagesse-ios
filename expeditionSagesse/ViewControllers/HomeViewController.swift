@@ -32,6 +32,8 @@ class HomeViewController: UIViewController {
         gameDifficultyPicker.delegate = self
         gameDifficultyPicker.dataSource = self
         
+      
+        
         self.nextStepButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
     }
     
@@ -43,7 +45,7 @@ class HomeViewController: UIViewController {
             let playersController : PlayersViewController = segue.destination as! PlayersViewController
                 
             playersController.playersNumber = possiblePlayersNumber[playersNumberPicker.selectedRow(inComponent: 0)]
-            
+            playersController.numberOfCriterias = difficultyLevels[gameDifficultyPicker.selectedRow(inComponent: 0)].numberOfCards
         }
     }
 }
