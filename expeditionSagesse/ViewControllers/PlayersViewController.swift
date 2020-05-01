@@ -54,11 +54,12 @@ class PlayersViewController: UIViewController {
            
             newParty.setTeams()
 
-            let questionsSets = getQuestionsSetsFromJson()
-
-            selectQuestionController.party = newParty
-            selectQuestionController.modalPresentationStyle = .fullScreen
-            self.present(selectQuestionController, animated: true, completion: nil)
+            if let questionsSets = getQuestionsSetsFromJson() {
+                newParty.questionsSets = randomSelectNQuestionsSets(questionsSets: questionsSets, n: newParty.totalQuestions)
+                selectQuestionController.party = newParty
+                selectQuestionController.modalPresentationStyle = .fullScreen
+                self.present(selectQuestionController, animated: true, completion: nil)
+            }
         }
     }
     
@@ -81,7 +82,7 @@ class PlayersViewController: UIViewController {
     }
 
     private func getQuestionsSetsFromJson() -> [QuestionsSet]? {
-        if let path = Bundle.main.path(forResource: "Questions.json", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "Questions", ofType: "json") {
             do {
                 let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let decoder = JSONDecoder()
@@ -96,6 +97,10 @@ class PlayersViewController: UIViewController {
             }
         }
         return nil
+    }
+
+    private func randomSelectNQuestionsSets(questionsSets: [QuestionsSet], n: Int) -> [QuestionsSet] {
+        return Array(questionsSets.shuffled().prefix(n))
     }
 }
 
@@ -140,7 +145,7 @@ extension PlayersViewController : UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         let currentPlayerTag = textField.tag
-        var player = players[currentPlayerTag-1]
+        let player = players[currentPlayerTag-1]
         player.name = textField.text
         players[currentPlayerTag-1] = player
         

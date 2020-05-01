@@ -40,7 +40,7 @@ class SelectQuestionViewController: UIViewController {
             backgroundView.backgroundColor = UIColor(patternImage: wallpaperImage)
         }
 
-        titleLabel.text = String.localizedStringWithFormat(NSLocalizedString("selectQuestion.title", comment: "Question a/n"), "\(party.currentQuestion + 1)", "8")
+        titleLabel.text = String.localizedStringWithFormat(NSLocalizedString("selectQuestion.title", comment: "Question a/n"), "\(party.currentQuestion + 1)", "\(party.totalQuestions)")
 
         talkingPlayersView.layer.borderWidth = 2
         talkingPlayersView.layer.borderColor = Helper.UIColorFromHex(0x02AAB0).cgColor
@@ -74,13 +74,20 @@ class SelectQuestionViewController: UIViewController {
 
         questionSelectionLabel.text = NSLocalizedString("selectQuestion.selectQuestionLabel", comment: "Orators")
 
-        if let question1View = Bundle.main.loadNibNamed("QuestionCardView", owner: self, options: nil)?[0] as? QuestionCardView {
-            question1View.configure(question: "Y a t-il des vegans qui aiment la viande?")
-            questionSelectionStackView.addArrangedSubview(question1View)
-        }
-        if let question2View = Bundle.main.loadNibNamed("QuestionCardView", owner: self, options: nil)?[0] as? QuestionCardView {
-            question2View.configure(question: "Peut-on élever et consommer des animaux de façon éthique?Peut-on élever et consommer des animaux de façon éthique?Peut-on élever et consommer des animaux de façon éthique?")
-            questionSelectionStackView.addArrangedSubview(question2View)
+        
+        if let currentQuestions = party.questionsSets[party.currentQuestion].questions {
+            if let question1View = Bundle.main.loadNibNamed("QuestionCardView", owner: self, options: nil)?[0] as? QuestionCardView {
+                if currentQuestions.count > 0, let labels = currentQuestions[0].labels, let question = labels[Locale.current.languageCode?.uppercased() ?? "EN"] {
+                    question1View.configure(question: question)
+                    questionSelectionStackView.addArrangedSubview(question1View)
+                }
+            }
+            if let question2View = Bundle.main.loadNibNamed("QuestionCardView", owner: self, options: nil)?[0] as? QuestionCardView {
+                if currentQuestions.count > 1, let labels = currentQuestions[1].labels, let question = labels[Locale.current.languageCode?.uppercased() ?? "EN"] {
+                    question2View.configure(question: question)
+                    questionSelectionStackView.addArrangedSubview(question2View)
+                }
+            }
         }
     }
 }
