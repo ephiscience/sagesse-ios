@@ -15,6 +15,7 @@ public class Party {
     public var talkingPlayers: [[Player]] = []
     public var judgePlayers: [[Player]] = []
     public var questionsSets: [QuestionsSet] = []
+    public var currentSelectedQuestion: Int?
     public var criterias: [String] = []
 
     public init(players: [Player], criterias: [String]) {

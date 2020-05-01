@@ -23,14 +23,16 @@ class SelectQuestionViewController: UIViewController {
     @IBOutlet weak var questionSelectionView: UIView!
     @IBOutlet weak var questionSelectionLabel: UILabel!
     @IBOutlet weak var questionSelectionStackView: UIStackView!
+    @IBOutlet weak var startQuestionButton: UIButton!
     
-    public var party: Party?
+    private var party: Party?
 
     public func configure(party: Party) {
         self.party = party
     }
 
     override func viewDidLoad() {
+        super.viewDidLoad()
 
         guard let party = self.party else {
             return
@@ -78,15 +80,44 @@ class SelectQuestionViewController: UIViewController {
         if let currentQuestions = party.questionsSets[party.currentQuestion].questions {
             if let question1View = Bundle.main.loadNibNamed("QuestionCardView", owner: self, options: nil)?[0] as? QuestionCardView {
                 if currentQuestions.count > 0, let labels = currentQuestions[0].labels, let question = labels[Locale.current.languageCode?.uppercased() ?? "EN"] {
-                    question1View.configure(question: question)
+                    question1View.configure(identifier: 0, question: question, delegate: self)
                     questionSelectionStackView.addArrangedSubview(question1View)
                 }
             }
             if let question2View = Bundle.main.loadNibNamed("QuestionCardView", owner: self, options: nil)?[0] as? QuestionCardView {
                 if currentQuestions.count > 1, let labels = currentQuestions[1].labels, let question = labels[Locale.current.languageCode?.uppercased() ?? "EN"] {
-                    question2View.configure(question: question)
+                    question2View.configure(identifier: 1, question: question, delegate: self)
                     questionSelectionStackView.addArrangedSubview(question2View)
                 }
+            }
+        }
+
+        startQuestionButton.setTitle( NSLocalizedString("selectQuestion.startQuestionButton.label", comment: "Start question"), for: .normal)
+        startQuestionButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
+    }
+
+    @IBAction func startQuestion() {
+        if let questionTurnViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllersID.QuestionTurnVC.rawValue) as? QuestionTurnViewController {
+            if let party = self.party {
+                questionTurnViewController.configure(party: party)
+                questionTurnViewController.modalPresentationStyle = .fullScreen
+                self.present(questionTurnViewController, animated: true, completion: nil)
+            }
+        }
+    }
+}
+
+extension SelectQuestionViewController: QuestionCardViewDelegate {
+    func questionCardDidTap(identifier: Int) {
+        self.party?.currentSelectedQuestion = identifier
+
+        if let question1View = questionSelectionStackView.arrangedSubviews[0] as? QuestionCardView, let question2View = questionSelectionStackView.arrangedSubviews[1] as? QuestionCardView {
+            if identifier == 0 {
+                question1View.setBorderColor(color: UIColor.red.cgColor)
+                question2View.setBorderColor(color: Helper.UIColorFromHex(0x02AAB0).cgColor)
+            } else {
+                question1View.setBorderColor(color: Helper.UIColorFromHex(0x02AAB0).cgColor)
+                question2View.setBorderColor(color: UIColor.red.cgColor)
             }
         }
     }

@@ -56,7 +56,7 @@ class PlayersViewController: UIViewController {
 
             if let questionsSets = getQuestionsSetsFromJson() {
                 newParty.questionsSets = randomSelectNQuestionsSets(questionsSets: questionsSets, n: newParty.totalQuestions)
-                selectQuestionController.party = newParty
+                selectQuestionController.configure(party: newParty)
                 selectQuestionController.modalPresentationStyle = .fullScreen
                 self.present(selectQuestionController, animated: true, completion: nil)
             }

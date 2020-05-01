@@ -20,3 +20,4 @@
 "selectQuestion.talkingPlayersLabel" = "Orators";
 "selectQuestion.judgePlayersLabel" = "Auditors";
 "selectQuestion.selectQuestionLabel" = "You must choose the question that will be discussed among the two below.";
+"selectQuestion.startQuestionButton.label" = "Start Question";
