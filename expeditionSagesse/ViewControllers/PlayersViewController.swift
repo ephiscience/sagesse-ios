@@ -53,6 +53,9 @@ class PlayersViewController: UIViewController {
             let newParty: Party = Party(players: self.players, criterias: criterias)
            
             newParty.setTeams()
+
+            let questionsSets = getQuestionsSetsFromJson()
+
             selectQuestionController.party = newParty
             selectQuestionController.modalPresentationStyle = .fullScreen
             self.present(selectQuestionController, animated: true, completion: nil)
@@ -76,8 +79,24 @@ class PlayersViewController: UIViewController {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollview.contentInset = contentInset
     }
-    
-    
+
+    private func getQuestionsSetsFromJson() -> [QuestionsSet]? {
+        if let path = Bundle.main.path(forResource: "Questions.json", ofType: "json") {
+            do {
+                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let decoder = JSONDecoder()
+                do {
+                    let questionsSets = try decoder.decode([QuestionsSet].self, from: jsonData)
+                    return questionsSets
+                } catch {
+                    return nil
+                }
+            } catch {
+                return nil
+            }
+        }
+        return nil
+    }
 }
 
 
