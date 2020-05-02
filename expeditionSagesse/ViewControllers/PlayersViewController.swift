@@ -53,9 +53,13 @@ class PlayersViewController: UIViewController {
             let newParty: Party = Party(players: self.players, criterias: criterias)
            
             newParty.setTeams()
-            selectQuestionController.party = newParty
-            selectQuestionController.modalPresentationStyle = .fullScreen
-            self.present(selectQuestionController, animated: true, completion: nil)
+
+            if let questionsSets = getQuestionsSetsFromJson() {
+                newParty.questionsSets = randomSelectNQuestionsSets(questionsSets: questionsSets, n: newParty.totalQuestions)
+                selectQuestionController.configure(party: newParty)
+                selectQuestionController.modalPresentationStyle = .fullScreen
+                self.present(selectQuestionController, animated: true, completion: nil)
+            }
         }
     }
     
@@ -76,8 +80,28 @@ class PlayersViewController: UIViewController {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollview.contentInset = contentInset
     }
-    
-    
+
+    private func getQuestionsSetsFromJson() -> [QuestionsSet]? {
+        if let path = Bundle.main.path(forResource: "Questions", ofType: "json") {
+            do {
+                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let decoder = JSONDecoder()
+                do {
+                    let questionsSets = try decoder.decode([QuestionsSet].self, from: jsonData)
+                    return questionsSets
+                } catch {
+                    return nil
+                }
+            } catch {
+                return nil
+            }
+        }
+        return nil
+    }
+
+    private func randomSelectNQuestionsSets(questionsSets: [QuestionsSet], n: Int) -> [QuestionsSet] {
+        return Array(questionsSets.shuffled().prefix(n))
+    }
 }
 
 
@@ -121,7 +145,7 @@ extension PlayersViewController : UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         let currentPlayerTag = textField.tag
-        var player = players[currentPlayerTag-1]
+        let player = players[currentPlayerTag-1]
         player.name = textField.text
         players[currentPlayerTag-1] = player
         

@@ -10,9 +10,12 @@ import Foundation
 
 public class Party {
     var players: [Player]
+    var totalQuestions: Int = 8
     var currentQuestion: Int = 0
     public var talkingPlayers: [[Player]] = []
     public var judgePlayers: [[Player]] = []
+    public var questionsSets: [QuestionsSet] = []
+    public var currentSelectedQuestion: Int?
     public var criterias: [String] = []
 
     public init(players: [Player], criterias: [String]) {
@@ -25,7 +28,7 @@ public class Party {
     }
 
     public func setTeams() {
-        for question in 0...7 {
+        for question in 0...(totalQuestions - 1) {
             self.talkingPlayers.append([])
             setTalkingPlayers(question: question)
             self.judgePlayers.append(getUnpickedPlayers(question: question))

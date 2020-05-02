@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,6 +50,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="R9y-md-XHd" secondAttribute="bottom" constant="20" id="2MK-Fw-NxE"/>
                 <constraint firstAttribute="bottom" secondItem="DTE-y5-jWj" secondAttribute="bottom" id="609-da-gmU"/>
@@ -66,9 +67,15 @@
                 <outlet property="backgroundView" destination="DTE-y5-jWj" id="av5-QI-b4G"/>
                 <outlet property="questionLabel" destination="7W6-z9-CK7" id="uo0-2g-k6i"/>
                 <outlet property="questionLabelView" destination="R9y-md-XHd" id="8YB-mO-3wi"/>
+                <outletCollection property="gestureRecognizers" destination="yzY-u0-UYP" appends="YES" id="Te6-ao-rul"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="140.625"/>
         </view>
+        <tapGestureRecognizer id="yzY-u0-UYP">
+            <connections>
+                <action selector="viewDidTap" destination="iN0-l3-epB" id="UPd-u3-ZIU"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="QuestionFrame" width="248" height="354"/>

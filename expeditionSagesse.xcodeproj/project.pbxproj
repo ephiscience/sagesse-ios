@@ -10,6 +10,10 @@
 		3D0C488824544CA300CE1EFF /* expeditionSagesseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C488724544CA300CE1EFF /* expeditionSagesseTests.swift */; };
 		3D1CD106245740C700C6D250 /* QuestionCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1CD105245740C700C6D250 /* QuestionCardView.xib */; };
 		3D1CD108245740D500C6D250 /* QuestionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CD107245740D500C6D250 /* QuestionCardView.swift */; };
+		3D79659F245C3D4E00D3D5B9 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D79659E245C3D4E00D3D5B9 /* Question.swift */; };
+		3D7965A1245C3D8D00D3D5B9 /* QuestionsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7965A0245C3D8D00D3D5B9 /* QuestionsSet.swift */; };
+		3D7965A3245C700C00D3D5B9 /* QuestionTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7965A2245C700C00D3D5B9 /* QuestionTurnViewController.swift */; };
+		3D7965A5245C78CD00D3D5B9 /* Questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D7965A4245C78CD00D3D5B9 /* Questions.json */; };
 		3D9DE9E12454898E002DCC67 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D9DE9E02454898E002DCC67 /* PlayerView.xib */; };
 		3D9DE9E324548B21002DCC67 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9DE9E224548B21002DCC67 /* PlayerView.swift */; };
 		8288089A2455D38F0085C9EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808972455D38F0085C9EE /* HomeViewController.swift */; };
@@ -46,6 +50,10 @@
 		3D0C488924544CA300CE1EFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D1CD105245740C700C6D250 /* QuestionCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCardView.xib; sourceTree = "<group>"; };
 		3D1CD107245740D500C6D250 /* QuestionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCardView.swift; sourceTree = "<group>"; };
+		3D79659E245C3D4E00D3D5B9 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		3D7965A0245C3D8D00D3D5B9 /* QuestionsSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsSet.swift; sourceTree = "<group>"; };
+		3D7965A2245C700C00D3D5B9 /* QuestionTurnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTurnViewController.swift; sourceTree = "<group>"; };
+		3D7965A4245C78CD00D3D5B9 /* Questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Questions.json; sourceTree = "<group>"; };
 		3D9DE9E02454898E002DCC67 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		3D9DE9E224548B21002DCC67 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		828808972455D38F0085C9EE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +122,7 @@
 				828808972455D38F0085C9EE /* HomeViewController.swift */,
 				828808982455D38F0085C9EE /* PlayersViewController.swift */,
 				828808992455D38F0085C9EE /* SelectQuestionViewController.swift */,
+				3D7965A2245C700C00D3D5B9 /* QuestionTurnViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -123,6 +132,8 @@
 			children = (
 				8288089D2455D3A10085C9EE /* Party.swift */,
 				8288089E2455D3A10085C9EE /* Player.swift */,
+				3D79659E245C3D4E00D3D5B9 /* Question.swift */,
+				3D7965A0245C3D8D00D3D5B9 /* QuestionsSet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				82D412CD2459C061003BA5A3 /* criterias.json */,
+				3D7965A4245C78CD00D3D5B9 /* Questions.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -280,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82F5F7272452F0E8001642A3 /* LaunchScreen.storyboard in Resources */,
+				3D7965A5245C78CD00D3D5B9 /* Questions.json in Resources */,
 				82F5F7332452F723001642A3 /* Localizable.strings in Resources */,
 				3D1CD106245740C700C6D250 /* QuestionCardView.xib in Resources */,
 				82F5F7242452F0E8001642A3 /* Assets.xcassets in Resources */,
@@ -310,9 +323,12 @@
 				8288089C2455D38F0085C9EE /* SelectQuestionViewController.swift in Sources */,
 				3D9DE9E324548B21002DCC67 /* PlayerView.swift in Sources */,
 				8288089F2455D3A10085C9EE /* Party.swift in Sources */,
+				3D7965A3245C700C00D3D5B9 /* QuestionTurnViewController.swift in Sources */,
 				828808AD2455D57D0085C9EE /* UIButton+Extension.swift in Sources */,
 				82F5F71B2452F0E6001642A3 /* AppDelegate.swift in Sources */,
+				3D7965A1245C3D8D00D3D5B9 /* QuestionsSet.swift in Sources */,
 				8288089A2455D38F0085C9EE /* HomeViewController.swift in Sources */,
+				3D79659F245C3D4E00D3D5B9 /* Question.swift in Sources */,
 				828808A62455D45B0085C9EE /* Helpers.swift in Sources */,
 				828808A02455D3A10085C9EE /* Player.swift in Sources */,
 				828808A72455D45B0085C9EE /* AppConfiguration.swift in Sources */,
