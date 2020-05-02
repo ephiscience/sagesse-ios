@@ -49,13 +49,13 @@ class PlayersViewController: UIViewController {
 
     @IBAction func startTheGame() {
         if let selectQuestionController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllersID.SelectQuestionVC.rawValue) as? SelectQuestionViewController {
-            let criterias  = AppConfiguration.getCriteriasCards(numberOfCards: numberOfCriterias)
+            let criterias  = DataProvider.getCriteriasCards(numberOfCards: numberOfCriterias)
             let newParty: Party = Party(players: self.players, criterias: criterias)
            
             newParty.setTeams()
-
-            if let questionsSets = getQuestionsSetsFromJson() {
-                newParty.questionsSets = randomSelectNQuestionsSets(questionsSets: questionsSets, n: newParty.totalQuestions)
+            
+            if let questionsSets = DataProvider.getRandomQuestions(numberOfQuestions: newParty.totalQuestions){
+                newParty.questionsSets = questionsSets
                 selectQuestionController.configure(party: newParty)
                 selectQuestionController.modalPresentationStyle = .fullScreen
                 self.present(selectQuestionController, animated: true, completion: nil)
@@ -79,28 +79,6 @@ class PlayersViewController: UIViewController {
 
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollview.contentInset = contentInset
-    }
-
-    private func getQuestionsSetsFromJson() -> [QuestionsSet]? {
-        if let path = Bundle.main.path(forResource: "Questions", ofType: "json") {
-            do {
-                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let decoder = JSONDecoder()
-                do {
-                    let questionsSets = try decoder.decode([QuestionsSet].self, from: jsonData)
-                    return questionsSets
-                } catch {
-                    return nil
-                }
-            } catch {
-                return nil
-            }
-        }
-        return nil
-    }
-
-    private func randomSelectNQuestionsSets(questionsSets: [QuestionsSet], n: Int) -> [QuestionsSet] {
-        return Array(questionsSets.shuffled().prefix(n))
     }
 }
 

@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var nextStepButton: UIButton!
     
-    let difficultyLevels = AppConfiguration.getDifficultyLevels()
+    let difficultyLevels = DataProvider.getDifficultyLevels()
     
     override func viewDidLoad() {
         super.viewDidLoad()
