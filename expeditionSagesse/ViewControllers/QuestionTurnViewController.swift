@@ -17,8 +17,19 @@ class QuestionTurnViewController: UIViewController {
     @IBOutlet weak var talkingPlayersStackView: UIStackView!
     @IBOutlet weak var questionStackView: UIStackView!
     
+    @IBOutlet weak var criteriasCollectionView: UICollectionView!
+    
     private var party: Party?
-
+    
+    // MARK: Collection View properties
+    let criteriaCollectionViewCellID = "criteriaCollectionViewCellID"
+       private let sectionInsets = UIEdgeInsets(top: 5.0,
+       left: 0.0,
+       bottom: 5.0,
+       right: 0.0)
+    private let itemsPerRow: CGFloat = 3
+    
+    // MARK: - public
     public func configure(party: Party) {
         self.party = party
     }
@@ -56,4 +67,49 @@ class QuestionTurnViewController: UIViewController {
             }
         }
     }
+}
+
+extension QuestionTurnViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: criteriaCollectionViewCellID, for: indexPath) as! CriteriaCollectionViewCell
+        
+        cell.criteriaLabel.text = "Définir"
+        return cell
+    }
+    
+    
+}
+
+// MARK: - Collection View Flow Layout Delegate
+extension QuestionTurnViewController : UICollectionViewDelegateFlowLayout {
+  //1
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      sizeForItemAt indexPath: IndexPath) -> CGSize {
+    //2
+    let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+    let availableWidth = view.frame.width
+    let widthPerItem = availableWidth / itemsPerRow
+    
+    return CGSize(width: 100, height: 97)
+  }
+  
+  //3
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      insetForSectionAt section: Int) -> UIEdgeInsets {
+    return sectionInsets
+  }
+  
+  // 4
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return sectionInsets.left
+  }
 }

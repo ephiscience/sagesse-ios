@@ -23,15 +23,15 @@ public class QuestionCardView: UIView {
 
     public func configure(identifier: Int?, question: String, delegate: QuestionCardViewDelegate?) {
         self.identifier = identifier
-
+        
         backgroundView.layer.borderWidth = 2
         backgroundView.layer.borderColor = Helper.UIColorFromHex(0x02AAB0).cgColor
-
+        
         questionLabelView.layer.borderWidth = 2
         questionLabelView.layer.borderColor = Helper.UIColorFromHex(0x02AAB0).cgColor
-
+        
         questionLabel.text = question
-
+        
         self.delegate = delegate
     }
 

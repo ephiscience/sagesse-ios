@@ -91,6 +91,7 @@ class SelectQuestionViewController: UIViewController {
                 }
             }
         }
+        questionSelectionStackView.translatesAutoresizingMaskIntoConstraints = false
 
         startQuestionButton.setTitle( NSLocalizedString("selectQuestion.startQuestionButton.label", comment: "Start question"), for: .normal)
         startQuestionButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
