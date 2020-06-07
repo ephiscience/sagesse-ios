@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BS9-rV-3sJ">
+                    <rect key="frame" x="45" y="313" width="324" height="280"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNC-hb-DrT">
+                            <rect key="frame" x="25" y="215" width="274" height="40"/>
+                            <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="oLH-FG-scB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                            <state key="normal" title="Quitter la partie">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFP-0T-DYD">
+                            <rect key="frame" x="25" y="150" width="274" height="40"/>
+                            <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="pCh-n7-Cqn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                            <state key="normal" title="Reprendre">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pause" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bd1-mx-Moc">
+                            <rect key="frame" x="113.5" y="30" width="97.5" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="IFW-3G-b0F"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="35"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="DNC-hb-DrT" secondAttribute="trailing" constant="25" id="3tM-zV-Guc"/>
+                        <constraint firstAttribute="height" constant="280" id="GIN-4E-njS"/>
+                        <constraint firstAttribute="width" constant="324" id="J1R-tm-umj"/>
+                        <constraint firstAttribute="bottom" secondItem="DNC-hb-DrT" secondAttribute="bottom" constant="25" id="LjB-Ox-nEy"/>
+                        <constraint firstItem="bd1-mx-Moc" firstAttribute="top" secondItem="BS9-rV-3sJ" secondAttribute="top" constant="30" id="Rwe-hf-uBH"/>
+                        <constraint firstItem="DNC-hb-DrT" firstAttribute="top" secondItem="VFP-0T-DYD" secondAttribute="bottom" constant="25" id="V80-kQ-mHZ"/>
+                        <constraint firstAttribute="trailing" secondItem="VFP-0T-DYD" secondAttribute="trailing" constant="25" id="b7J-3M-4Ol"/>
+                        <constraint firstItem="bd1-mx-Moc" firstAttribute="centerX" secondItem="BS9-rV-3sJ" secondAttribute="centerX" id="dup-4Q-LCM"/>
+                        <constraint firstItem="VFP-0T-DYD" firstAttribute="leading" secondItem="BS9-rV-3sJ" secondAttribute="leading" constant="25" id="f6X-nv-1D6"/>
+                        <constraint firstItem="DNC-hb-DrT" firstAttribute="leading" secondItem="BS9-rV-3sJ" secondAttribute="leading" constant="25" id="h48-FI-gSO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.347381161971831" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="BS9-rV-3sJ" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="ORR-F2-O1L"/>
+                <constraint firstItem="BS9-rV-3sJ" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="R5q-x4-AOr"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </view>
+    </objects>
+</document>

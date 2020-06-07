@@ -21,9 +21,13 @@ class QuestionTurnViewController: UIViewController {
     @IBOutlet weak var remainingCriteriasLabel: UILabel!
     
     @IBOutlet weak var criteriasCollectionView: UICollectionView!
+    @IBOutlet weak var pauseButton: UIButton!
     
     private var party: Party?
     private var displayedCriterias: [PartyCriteria] = []
+    
+    private var timer: Timer?
+    var totalTime = 60*3
     
     // MARK: Collection View properties
     let criteriaCollectionViewCellID = "criteriaCollectionViewCellID"
@@ -44,6 +48,8 @@ class QuestionTurnViewController: UIViewController {
         guard let party = self.party else {
             return
         }
+        
+        self.pauseButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
         
         self.displayedCriterias = party.getInitialCriterias()
 
@@ -72,6 +78,61 @@ class QuestionTurnViewController: UIViewController {
                 }
             }
         }
+        
+        self.timerLabel.text = self.timeFormatted(self.totalTime)
+        startTimer()
+    }
+    
+    @IBAction func pauseGameTapped(){
+        pauseTimer()
+        let sb = UIStoryboard(name:"Main", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "PauseAlertViewControllerID") as! PauseAlertViewController
+        vc.modalPresentationStyle = .overFullScreen
+        vc.delegate = self
+        self.present(vc, animated: true)
+    }
+    
+    @objc private func questionTimeout(){
+        
+    }
+    
+    private func pauseTimer() {
+        if let timer = self.timer {
+            timer.invalidate()
+        }
+    }
+    
+    private func startTimer() {
+        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+
+    @objc func updateTimer() {
+        self.timerLabel.text = self.timeFormatted(self.totalTime) // will show timer
+        if totalTime != 0 {
+            totalTime -= 1  // decrease counter timer
+        } else {
+            if let timer = self.timer {
+                timer.invalidate()
+                self.timer = nil
+            }
+        }
+    }
+
+    func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+}
+
+extension QuestionTurnViewController: PauseAlertViewControllerDelegate{
+    func resumeGame(){
+         self.dismiss(animated: true)
+        startTimer()
+    }
+    func exitGame(){
+         self.dismiss(animated: true)
+    
     }
 }
 

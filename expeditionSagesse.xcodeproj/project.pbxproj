@@ -26,6 +26,8 @@
 		828808AA2455D4690085C9EE /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808A92455D4680085C9EE /* PlayerTableViewCell.swift */; };
 		828808AD2455D57D0085C9EE /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808AC2455D57D0085C9EE /* UIButton+Extension.swift */; };
 		82B3596624606410009BFD79 /* CriteriaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3596524606410009BFD79 /* CriteriaCollectionViewCell.swift */; };
+		82D1A24C248D679B008D0CC8 /* PauseAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1A24B248D679B008D0CC8 /* PauseAlertViewController.swift */; };
+		82D1A24E248D67AB008D0CC8 /* PauseAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D1A24D248D67AB008D0CC8 /* PauseAlertViewController.xib */; };
 		82D412CE2459C061003BA5A3 /* criterias.json in Resources */ = {isa = PBXBuildFile; fileRef = 82D412CD2459C061003BA5A3 /* criterias.json */; };
 		82D412D0245D863B003BA5A3 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D412CF245D863B003BA5A3 /* DataProvider.swift */; };
 		82D412D2245D869C003BA5A3 /* GameCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D412D1245D869C003BA5A3 /* GameCriteria.swift */; };
@@ -69,6 +71,8 @@
 		828808A92455D4680085C9EE /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		828808AC2455D57D0085C9EE /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		82B3596524606410009BFD79 /* CriteriaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaCollectionViewCell.swift; sourceTree = "<group>"; };
+		82D1A24B248D679B008D0CC8 /* PauseAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseAlertViewController.swift; sourceTree = "<group>"; };
+		82D1A24D248D67AB008D0CC8 /* PauseAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseAlertViewController.xib; sourceTree = "<group>"; };
 		82D412CD2459C061003BA5A3 /* criterias.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = criterias.json; sourceTree = "<group>"; };
 		82D412CF245D863B003BA5A3 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		82D412D1245D869C003BA5A3 /* GameCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCriteria.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				3D1CD105245740C700C6D250 /* QuestionCardView.xib */,
 				3D1CD107245740D500C6D250 /* QuestionCardView.swift */,
 				82B3596524606410009BFD79 /* CriteriaCollectionViewCell.swift */,
+				82D1A24B248D679B008D0CC8 /* PauseAlertViewController.swift */,
+				82D1A24D248D67AB008D0CC8 /* PauseAlertViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 				3D1CD106245740C700C6D250 /* QuestionCardView.xib in Resources */,
 				82F5F7242452F0E8001642A3 /* Assets.xcassets in Resources */,
 				82D412CE2459C061003BA5A3 /* criterias.json in Resources */,
+				82D1A24E248D67AB008D0CC8 /* PauseAlertViewController.xib in Resources */,
 				82F5F7222452F0E6001642A3 /* Main.storyboard in Resources */,
 				3D9DE9E12454898E002DCC67 /* PlayerView.xib in Resources */,
 			);
@@ -340,6 +347,7 @@
 				3D7965A1245C3D8D00D3D5B9 /* QuestionsSet.swift in Sources */,
 				8288089A2455D38F0085C9EE /* HomeViewController.swift in Sources */,
 				3D79659F245C3D4E00D3D5B9 /* Question.swift in Sources */,
+				82D1A24C248D679B008D0CC8 /* PauseAlertViewController.swift in Sources */,
 				828808A62455D45B0085C9EE /* Helpers.swift in Sources */,
 				828808A02455D3A10085C9EE /* Player.swift in Sources */,
 				828808A72455D45B0085C9EE /* AppConfiguration.swift in Sources */,
