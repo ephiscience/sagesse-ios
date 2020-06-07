@@ -1,81 +1,81 @@
 [
-  {
-    "identifier": "criteria.give.reason",
-    "labels":
-       {
-        "FR": "Donner ses raisons",
-         "EN": "Explain reasons"
-       }
-  },
-   {
-    "identifier": "criteria.define",
-    "labels":
-       {
-        "FR": "Définir",
-         "EN": "Define"
-       }
-  },
-  {
-    "identifier": "criteria.example",
-    "labels":
-       {
-        "FR": "Exemple",
-         "EN": "Example"
-       }
-  },
-  {
-    "identifier": "criteria.reformulate",
-    "labels":
-       {
-        "FR": "Reformuler",
-         "EN": "Reformulate"
-       }
-  },
-  {
-    "identifier": "criteria.compare",
-    "labels":
-       {
-        "FR": "Comparer",
-         "EN": "Compare"
-       }
-  },
-  {
-    "identifier": "criteria.counter.example",
-    "labels":
-       {
-        "FR": "Contre-exemple",
-         "EN": "Counter-example"
-       }
-  },
-  {
-    "identifier": "criteria.justification",
-    "labels":
-       {
-        "FR": "Justification des sources",
-         "EN": "Justify sources"
-       }
-  },
-  {
-    "identifier": "criteria.be.clear",
-    "labels":
-       {
-        "FR": "Etre clair",
-         "EN": "Be clear"
-       }
-  },
-  {
-    "identifier": "criteria.nuance",
-    "labels":
-       {
-        "FR": "Nuancer",
-         "EN": "Nuance"
-       }
-  }
+    {
+        "identifier": "criteria.give.reason",
+        "labels":
+        {
+            "FR": "Donner ses raisons",
+            "EN": "Explain reasons"
+        }
+    },
+    {
+        "identifier": "criteria.define",
+        "labels":
+        {
+            "FR": "Définir",
+            "EN": "Define"
+        }
+    },
+    {
+        "identifier": "criteria.example",
+        "labels":
+        {
+            "FR": "Exemple",
+            "EN": "Example"
+        }
+    },
+    {
+        "identifier": "criteria.reformulate",
+        "labels":
+        {
+            "FR": "Reformuler",
+            "EN": "Reformulate"
+        }
+    },
+    {
+        "identifier": "criteria.compare",
+        "labels":
+        {
+            "FR": "Comparer",
+            "EN": "Compare"
+        }
+    },
+    {
+        "identifier": "criteria.counter.example",
+        "labels":
+        {
+            "FR": "Contre-exemple",
+            "EN": "Counter-example"
+        }
+    },
+    {
+        "identifier": "criteria.justification",
+        "labels":
+        {
+            "FR": "Justification des sources",
+            "EN": "Justify sources"
+        }
+    },
+    {
+        "identifier": "criteria.be.clear",
+        "labels":
+        {
+            "FR": "Etre clair",
+            "EN": "Be clear"
+        }
+    },
+    {
+        "identifier": "criteria.nuance",
+        "labels":
+        {
+            "FR": "Nuancer",
+            "EN": "Nuance"
+        }
+    }
 ]
-
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
+ 

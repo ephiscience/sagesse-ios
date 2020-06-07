@@ -8,7 +8,13 @@
 
 import Foundation
 
+public struct PartyCriteria {
+    var title: String
+    var validatedAuditors: Int
+}
+
 public class Party {
+    
     var players: [Player]
     var totalQuestions: Int = 8
     var currentQuestion: Int = 0
@@ -16,9 +22,9 @@ public class Party {
     public var judgePlayers: [[Player]] = []
     public var questionsSets: [QuestionsSet] = []
     public var currentSelectedQuestion: Int?
-    public var criterias: [String] = []
+    public var criterias: [PartyCriteria] = []
 
-    public init(players: [Player], criterias: [String]) {
+    public init(players: [Player], criterias: [PartyCriteria]) {
         self.players = players
         self.criterias = criterias
     }
@@ -115,5 +121,22 @@ public class Party {
             }
         }
         return result
+    }
+    
+    public func getInitialCriterias() -> [PartyCriteria] {
+        var initialArray: [PartyCriteria] = self.criterias
+        if self.criterias.count >= 3 {
+            initialArray = Array(self.criterias.prefix(3))
+            self.criterias.removeFirst(3)
+        }
+        
+        return initialArray
+    }
+    
+    public func pullANewCriteria(criteria: PartyCriteria) -> PartyCriteria? {
+        if !self.criterias.isEmpty {
+            return  self.criterias.removeFirst()
+        }
+        return nil
     }
 }

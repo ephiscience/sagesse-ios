@@ -24,8 +24,8 @@ class DataProvider  {
     }
     
     
-    static func getCriteriasCards(numberOfCards: Int) -> [String] {
-         var criteriasCards : [String] = []
+    static func getCriteriasCards(numberOfCards: Int) -> [PartyCriteria] {
+         var criteriasCards : [PartyCriteria] = []
 
         if let filepath = Bundle.main.path(forResource: "criterias", ofType: "json") {
             do {
@@ -35,15 +35,18 @@ class DataProvider  {
                 
                 let userLanguage = AppConfiguration.getUserLanguageCode()
                 
+                //Select List of basic criterias with the user's language
                 for criteria in criterias {
                     if let localizedCriteria = criteria.labels[userLanguage.rawValue] {
                         basicCriterias.append(localizedCriteria)
                     }
                 }
                 
-               
+               //create random array of criterias with numberOfCards size
                 for _ in 0..<numberOfCards {
-                    criteriasCards.append(basicCriterias.randomElement()!)
+                    let randomCriteria = basicCriterias.randomElement()!
+                    let partyCriteria = PartyCriteria(title: randomCriteria, validatedAuditors: 0)
+                    criteriasCards.append(partyCriteria)
                 }
                 print(criteriasCards)
                 
