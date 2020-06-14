@@ -52,6 +52,7 @@ class QuestionTurnViewController: UIViewController {
         self.pauseButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
         
         self.displayedCriterias = party.getInitialCriterias()
+        self.remainingCriteriasLabel.text = "\(party.criterias.count+self.displayedCriterias.count)"
 
         if let wallpaperImage = UIImage(named: "wallpaper") {
             backgroundView.backgroundColor = UIColor(patternImage: wallpaperImage)
@@ -139,7 +140,7 @@ extension QuestionTurnViewController: PauseAlertViewControllerDelegate{
 extension QuestionTurnViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        self.displayedCriterias.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -163,11 +164,21 @@ extension QuestionTurnViewController: UICollectionViewDataSource, UICollectionVi
             if criteria.validatedAuditors >= 2 {
                 if let newCriteria = self.party?.pullANewCriteria(criteria: cell.criteria!){
                     self.displayedCriterias[indexPath.row] = newCriteria
-                    collectionView.reloadData()
-                } else if self.party!.criterias.isEmpty {
-                    //TODO SUCCESS
+                    
                 } else {
+                    self.displayedCriterias.remove(at: indexPath.row)
+                    
+                }
+                 collectionView.reloadData()
+                self.remainingCriteriasLabel.text = "\(self.party!.criterias.count+self.displayedCriterias.count)"
+                
+                if totalTime > 0 && self.party!.criterias.isEmpty &&  self.displayedCriterias.isEmpty  {
+                    //TODO SUCCESS
+                    pauseTimer()
+                    print("🎉🎉🎉 Success 🎉🎉🎉")
+                } else if totalTime == 0 && (!self.party!.criterias.isEmpty || !self.displayedCriterias.isEmpty) {
                     //PROBLEM
+                    print("💔💔💔 Echec et mat 💔💔💔")
                 }
             }
         }
