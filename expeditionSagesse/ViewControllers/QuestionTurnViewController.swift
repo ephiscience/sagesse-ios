@@ -24,7 +24,6 @@ class QuestionTurnViewController: UIViewController {
     @IBOutlet weak var pauseButton: UIButton!
     
     private var party: Party?
-    private var displayedCriterias: [PartyCriteria] = []
     
     private var timer: Timer?
     var totalTime = 60*3
@@ -51,8 +50,8 @@ class QuestionTurnViewController: UIViewController {
         
         self.pauseButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
         
-        self.displayedCriterias = party.getInitialCriterias()
-        self.remainingCriteriasLabel.text = "\(party.criterias.count+self.displayedCriterias.count)"
+        
+        self.remainingCriteriasLabel.text = "\(party.pendingCriterias.count+party.displayedCriterias.count)"
 
         if let wallpaperImage = UIImage(named: "wallpaper") {
             backgroundView.backgroundColor = UIColor(patternImage: wallpaperImage)
@@ -86,15 +85,21 @@ class QuestionTurnViewController: UIViewController {
     
     @IBAction func pauseGameTapped(){
         pauseTimer()
-        let sb = UIStoryboard(name:"Main", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "PauseAlertViewControllerID") as! PauseAlertViewController
-        vc.modalPresentationStyle = .overFullScreen
-        vc.delegate = self
-        self.present(vc, animated: true)
+        if let pauseController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(identifier: ViewControllersID.PauseAlertVC.rawValue) as? PauseAlertViewController {
+            pauseController.modalPresentationStyle = .overFullScreen
+            pauseController.delegate = self
+            self.present(pauseController, animated: true)
+        }
     }
     
     @objc private func questionTimeout(){
         
+        
+        if let timeElapsedController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllersID.TimeElapsedVC.rawValue) as? TimeElapsedViewController {
+            timeElapsedController.configure(party: self.party!)
+            timeElapsedController.modalPresentationStyle = .overFullScreen
+            self.present(timeElapsedController, animated: true)
+        }
     }
     
     private func pauseTimer() {
@@ -116,6 +121,7 @@ class QuestionTurnViewController: UIViewController {
                 timer.invalidate()
                 self.timer = nil
             }
+            questionTimeout()
         }
     }
 
@@ -140,45 +146,41 @@ extension QuestionTurnViewController: PauseAlertViewControllerDelegate{
 extension QuestionTurnViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.displayedCriterias.count
+        party?.displayedCriterias.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: criteriaCollectionViewCellID, for: indexPath) as! CriteriaCollectionViewCell
         
-        let criteria =  self.displayedCriterias[indexPath.row]
-        
-        cell.configure(withCriteria: criteria)
+        if let criteria =  party?.displayedCriterias[indexPath.row] {
+            cell.configure(withCriteria: criteria, shouldDisplayAuditorsImages: true)
+        }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? CriteriaCollectionViewCell {
-            
-            var criteria = self.displayedCriterias[indexPath.row]
+            guard let party = self.party else {
+                return
+            }
+            var criteria = party.displayedCriterias[indexPath.row]
             criteria.validatedAuditors = criteria.validatedAuditors + 1
-            self.displayedCriterias[indexPath.row] = criteria
+            party.displayedCriterias[indexPath.row] = criteria
             
             cell.didAuditorValidated(withCriteria: criteria)
             if criteria.validatedAuditors >= 2 {
-                if let newCriteria = self.party?.pullANewCriteria(criteria: cell.criteria!){
-                    self.displayedCriterias[indexPath.row] = newCriteria
-                    
-                } else {
-                    self.displayedCriterias.remove(at: indexPath.row)
-                    
-                }
-                 collectionView.reloadData()
-                self.remainingCriteriasLabel.text = "\(self.party!.criterias.count+self.displayedCriterias.count)"
+                let _ = self.party?.validateCriteriaAndPullNewOne(criteriaToValidate: cell.criteria!)
+                collectionView.reloadData()
+                self.remainingCriteriasLabel.text = "\(self.party!.pendingCriterias.count+party.displayedCriterias.count)"
                 
-                if totalTime > 0 && self.party!.criterias.isEmpty &&  self.displayedCriterias.isEmpty  {
+                if totalTime > 0 && self.party!.pendingCriterias.isEmpty &&  party.displayedCriterias.isEmpty  {
                     //TODO SUCCESS
                     pauseTimer()
                     print("🎉🎉🎉 Success 🎉🎉🎉")
-                } else if totalTime == 0 && (!self.party!.criterias.isEmpty || !self.displayedCriterias.isEmpty) {
+                } else if totalTime == 0 && (!self.party!.pendingCriterias.isEmpty || !party.displayedCriterias.isEmpty) {
                     //PROBLEM
-                    print("💔💔💔 Echec et mat 💔💔💔")
+                   // print("💔💔💔 Echec et mat 💔💔💔")
                 }
             }
         }

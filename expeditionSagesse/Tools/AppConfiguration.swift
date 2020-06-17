@@ -12,10 +12,14 @@ import UIKit
 public enum ViewControllersID: String {
     case SelectQuestionVC = "SelectQuestionViewControllerID"
     case QuestionTurnVC = "QuestionTurnViewControllerID"
+    case PauseAlertVC = "PauseAlertViewControllerID"
+    case TimeElapsedVC = "TimeElapsedViewControllerID"
+    
 }
 
 public enum SegueIdentifier: String {
     case ChoosePlayersNamesSegue = "ChoosePlayersNamesSegue"
+    case ValidateCriteriaByOratorsSegue = "ValidateCriteriaByOratorsSegue"
 }
 
 

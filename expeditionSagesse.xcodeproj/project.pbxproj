@@ -25,6 +25,8 @@
 		828808A72455D45B0085C9EE /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808A32455D45B0085C9EE /* AppConfiguration.swift */; };
 		828808AA2455D4690085C9EE /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808A92455D4680085C9EE /* PlayerTableViewCell.swift */; };
 		828808AD2455D57D0085C9EE /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808AC2455D57D0085C9EE /* UIButton+Extension.swift */; };
+		82A71A14249689F10063D936 /* TimeElapsedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A71A13249689F10063D936 /* TimeElapsedViewController.swift */; };
+		82A71A162496933E0063D936 /* ValidateCriteriaByOratorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A71A152496933E0063D936 /* ValidateCriteriaByOratorsViewController.swift */; };
 		82B3596624606410009BFD79 /* CriteriaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3596524606410009BFD79 /* CriteriaCollectionViewCell.swift */; };
 		82D1A24C248D679B008D0CC8 /* PauseAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1A24B248D679B008D0CC8 /* PauseAlertViewController.swift */; };
 		82D1A24E248D67AB008D0CC8 /* PauseAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D1A24D248D67AB008D0CC8 /* PauseAlertViewController.xib */; };
@@ -70,6 +72,8 @@
 		828808A32455D45B0085C9EE /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		828808A92455D4680085C9EE /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		828808AC2455D57D0085C9EE /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		82A71A13249689F10063D936 /* TimeElapsedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeElapsedViewController.swift; sourceTree = "<group>"; };
+		82A71A152496933E0063D936 /* ValidateCriteriaByOratorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCriteriaByOratorsViewController.swift; sourceTree = "<group>"; };
 		82B3596524606410009BFD79 /* CriteriaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaCollectionViewCell.swift; sourceTree = "<group>"; };
 		82D1A24B248D679B008D0CC8 /* PauseAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseAlertViewController.swift; sourceTree = "<group>"; };
 		82D1A24D248D67AB008D0CC8 /* PauseAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseAlertViewController.xib; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				828808982455D38F0085C9EE /* PlayersViewController.swift */,
 				828808992455D38F0085C9EE /* SelectQuestionViewController.swift */,
 				3D7965A2245C700C00D3D5B9 /* QuestionTurnViewController.swift */,
+				82A71A13249689F10063D936 /* TimeElapsedViewController.swift */,
+				82A71A152496933E0063D936 /* ValidateCriteriaByOratorsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 				3D9DE9E324548B21002DCC67 /* PlayerView.swift in Sources */,
 				8288089F2455D3A10085C9EE /* Party.swift in Sources */,
 				3D7965A3245C700C00D3D5B9 /* QuestionTurnViewController.swift in Sources */,
+				82A71A14249689F10063D936 /* TimeElapsedViewController.swift in Sources */,
 				828808AD2455D57D0085C9EE /* UIButton+Extension.swift in Sources */,
 				82F5F71B2452F0E6001642A3 /* AppDelegate.swift in Sources */,
 				3D7965A1245C3D8D00D3D5B9 /* QuestionsSet.swift in Sources */,
@@ -353,6 +360,7 @@
 				828808A72455D45B0085C9EE /* AppConfiguration.swift in Sources */,
 				82F5F73A245324B5001642A3 /* SceneDelegate.swift in Sources */,
 				82D412D0245D863B003BA5A3 /* DataProvider.swift in Sources */,
+				82A71A162496933E0063D936 /* ValidateCriteriaByOratorsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

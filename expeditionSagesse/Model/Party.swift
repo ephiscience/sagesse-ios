@@ -22,11 +22,13 @@ public class Party {
     public var judgePlayers: [[Player]] = []
     public var questionsSets: [QuestionsSet] = []
     public var currentSelectedQuestion: Int?
-    public var criterias: [PartyCriteria] = []
+    public var pendingCriterias: [PartyCriteria] = []
+    public var displayedCriterias: [PartyCriteria] = []
 
     public init(players: [Player], criterias: [PartyCriteria]) {
         self.players = players
-        self.criterias = criterias
+        self.pendingCriterias = criterias
+        self.displayedCriterias = self.getInitialCriterias()
     }
 
     public func nextQuestion() {
@@ -124,18 +126,25 @@ public class Party {
     }
     
     public func getInitialCriterias() -> [PartyCriteria] {
-        var initialArray: [PartyCriteria] = self.criterias
-        if self.criterias.count >= 3 {
-            initialArray = Array(self.criterias.prefix(3))
-            self.criterias.removeFirst(3)
+        var initialArray: [PartyCriteria] = self.pendingCriterias
+        if self.pendingCriterias.count >= 3 {
+            initialArray = Array(self.pendingCriterias.prefix(3))
+            self.pendingCriterias.removeFirst(3)
         }
         
         return initialArray
     }
     
-    public func pullANewCriteria(criteria: PartyCriteria) -> PartyCriteria? {
-        if !self.criterias.isEmpty {
-            return  self.criterias.removeFirst()
+    public func validateCriteriaAndPullNewOne(criteriaToValidate: PartyCriteria) -> PartyCriteria? {
+            
+        if let index = self.displayedCriterias.firstIndex(where: {$0.title == criteriaToValidate.title}){
+            if !self.pendingCriterias.isEmpty {
+                self.displayedCriterias[index] = self.pendingCriterias.removeFirst()
+                return  self.displayedCriterias[index]
+            } else {
+                self.displayedCriterias.remove(at: index)
+                return nil
+            }
         }
         return nil
     }

@@ -14,6 +14,7 @@ protocol PauseAlertViewControllerDelegate {
     func resumeGame()
     func exitGame()
 }
+
 class PauseAlertViewController: UIViewController {
     
     @IBOutlet weak var resumeButton: UIButton!

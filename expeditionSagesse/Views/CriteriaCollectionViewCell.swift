@@ -20,13 +20,20 @@ class CriteriaCollectionViewCell: UICollectionViewCell {
      let auditorImageOffName = "gray_Headphones_2853339"
     var validationsByAuditors: Int = 0
     
-    func configure(withCriteria criteria: PartyCriteria){
+    func configure(withCriteria criteria: PartyCriteria, shouldDisplayAuditorsImages: Bool = true){
         self.criteria = criteria
         self.criteriaLabel.text = criteria.title
-        auditorOneImageView.image = UIImage(named: auditorImageOffName)
-        auditorTwoImageView.image = UIImage(named: auditorImageOffName)
-        if criteria.validatedAuditors == 1 {
-            auditorOneImageView.image = UIImage(named: auditorImageOnName)
+        if shouldDisplayAuditorsImages == true {
+            auditorOneImageView.image = UIImage(named: auditorImageOffName)
+            auditorTwoImageView.image = UIImage(named: auditorImageOffName)
+            if criteria.validatedAuditors == 1 {
+                auditorOneImageView.image = UIImage(named: auditorImageOnName)
+            }
+        auditorOneImageView.isHidden = false
+        auditorTwoImageView.isHidden = false
+        } else {
+            auditorOneImageView.isHidden = true
+            auditorTwoImageView.isHidden = true
         }
     }
     
