@@ -28,7 +28,7 @@ class QuestionTurnViewController: UIViewController {
     private var party: Party?
     
     private var timer: Timer?
-    var totalTime = 30//60*3
+    var totalTime = 15//60*3
     
     // MARK: Collection View properties
     let criteriaCollectionViewCellID = "criteriaCollectionViewCellID"
@@ -55,7 +55,7 @@ class QuestionTurnViewController: UIViewController {
         
         self.remainingCriteriasLabel.text = "\(party.pendingCriterias.count+party.displayedCriterias.count)"
 
-        if let wallpaperImage = UIImage(named: "wallpaper") {
+        if let wallpaperImage = UIImage(named: AppConfiguration.backgroundImageName) {
             backgroundView.backgroundColor = UIColor(patternImage: wallpaperImage)
         }
 

@@ -44,7 +44,7 @@ class ValidateCriteriaByOratorsViewController: UIViewController {
             return
         }
 
-        if let wallpaperImage = UIImage(named: "wallpaper") {
+        if let wallpaperImage = UIImage(named: AppConfiguration.backgroundImageName) {
             backgroundView.backgroundColor = UIColor(patternImage: wallpaperImage)
         }
         

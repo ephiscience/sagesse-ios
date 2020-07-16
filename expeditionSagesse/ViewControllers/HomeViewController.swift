@@ -27,6 +27,11 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let wallpaperImage = UIImage(named: AppConfiguration.backgroundImageName) {
+            view.backgroundColor = UIColor(patternImage: wallpaperImage)
+        }
+        
         playersNumberPicker.dataSource = self
         playersNumberPicker.delegate = self
         

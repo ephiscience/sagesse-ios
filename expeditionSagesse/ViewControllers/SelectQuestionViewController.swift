@@ -38,7 +38,7 @@ class SelectQuestionViewController: UIViewController {
             return
         }
 
-        if let wallpaperImage = UIImage(named: "wallpaper") {
+        if let wallpaperImage = UIImage(named: AppConfiguration.backgroundImageName) {
             backgroundView.backgroundColor = UIColor(patternImage: wallpaperImage)
         }
 
@@ -97,7 +97,6 @@ class SelectQuestionViewController: UIViewController {
                 }
             }
         }
-        questionSelectionStackView.translatesAutoresizingMaskIntoConstraints = false
 
         startQuestionButton.setTitle( NSLocalizedString("selectQuestion.startQuestionButton.label", comment: "Start question"), for: .normal)
         startQuestionButton.applyGradient(colors: [Helper.UIColorFromHex(0x4F4E4E).cgColor, Helper.UIColorFromHex(0xA9A6A6).cgColor])

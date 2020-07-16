@@ -31,6 +31,10 @@ class PlayersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let wallpaperImage = UIImage(named: AppConfiguration.backgroundImageName) {
+            view.backgroundColor = UIColor(patternImage: wallpaperImage)
+        }
+        
         enterPlayersNamesLabel.text = NSLocalizedString("players.choose.name.title", comment: "Enter players name")
         startGameButton.setTitle( NSLocalizedString("button.start.game", comment: "Start the game"), for: .normal)
         

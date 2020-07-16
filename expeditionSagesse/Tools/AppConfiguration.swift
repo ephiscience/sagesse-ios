@@ -44,4 +44,6 @@ class AppConfiguration {
             return .fr
         }
     }
+    
+    static let backgroundImageName = "gplaypattern"
 }
