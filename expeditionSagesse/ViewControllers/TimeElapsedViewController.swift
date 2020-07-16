@@ -22,6 +22,12 @@ class TimeElapsedViewController: UIViewController {
         super.viewDidLoad()
         self.yesButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
         self.noButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
+        
+        titleLabel.text = NSLocalizedString("time.elapsed.alert.title", comment: "Temps écoulé")
+        questionLabel.text = NSLocalizedString("time.elapsed.alert.question", comment: "Auditeurs, considérez vous que les orateurs ont bien répondu à la question?")
+        yesButton.setTitle(NSLocalizedString("time.elapsed.alert.yes.button", comment: "Oui"), for: .normal)
+        noButton.setTitle(NSLocalizedString("time.elapsed.alert.no.button", comment: "Non"), for: .normal)
+        
     }
     
     // MARK: - public
@@ -34,18 +40,31 @@ class TimeElapsedViewController: UIViewController {
         super.prepare(for: segue, sender: sender)
         
         if(segue.identifier == SegueIdentifier.ValidateCriteriaByOratorsSegue.rawValue) {
-           let validateController : ValidateCriteriaByOratorsViewController = segue.destination as! ValidateCriteriaByOratorsViewController
+            let validateController : ValidateCriteriaByOratorsViewController = segue.destination as! ValidateCriteriaByOratorsViewController
             validateController.configure(party: self.party!)
         }
     }
     
     
     @IBAction func didTapNo(){
-        if let selectQuestionController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllersID.SelectQuestionVC.rawValue) as? SelectQuestionViewController, let party = party {
-        
-            selectQuestionController.configure(party: party)
-            selectQuestionController.modalPresentationStyle = .overFullScreen
-            self.present(selectQuestionController, animated: true, completion: nil)
+        guard let party = self.party else {
+            return
+        }
+        //if last question, display party finished
+        if party.currentQuestion == party.totalQuestions - 1 {
+            if let partyFinishedController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(identifier: ViewControllersID.PartyFinishedVC.rawValue) as? PartyFinishedViewController {
+                partyFinishedController.modalPresentationStyle = .overFullScreen
+                partyFinishedController.configure(party: self.party!)
+                self.present(partyFinishedController, animated: true)
+            }
+        } else {
+            party.nextQuestion()
+            if let selectQuestionController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllersID.SelectQuestionVC.rawValue) as? SelectQuestionViewController {
+                
+                selectQuestionController.configure(party: party)
+                selectQuestionController.modalPresentationStyle = .overFullScreen
+                self.present(selectQuestionController, animated: true, completion: nil)
+            }
         }
     }
 }

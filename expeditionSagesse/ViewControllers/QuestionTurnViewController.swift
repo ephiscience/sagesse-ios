@@ -18,7 +18,9 @@ class QuestionTurnViewController: UIViewController {
     @IBOutlet weak var questionStackView: UIStackView!
     
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var timerTitleLabel: UILabel!
     @IBOutlet weak var remainingCriteriasLabel: UILabel!
+    @IBOutlet weak var remainingCriteriasTitleLabel: UILabel!
     
     @IBOutlet weak var criteriasCollectionView: UICollectionView!
     @IBOutlet weak var pauseButton: UIButton!
@@ -26,7 +28,7 @@ class QuestionTurnViewController: UIViewController {
     private var party: Party?
     
     private var timer: Timer?
-    var totalTime = 60*3
+    var totalTime = 30//60*3
     
     // MARK: Collection View properties
     let criteriaCollectionViewCellID = "criteriaCollectionViewCellID"
@@ -58,6 +60,9 @@ class QuestionTurnViewController: UIViewController {
         }
 
         titleLabel.text = String.localizedStringWithFormat(NSLocalizedString("selectQuestion.title", comment: "Question a/n"), "\(party.currentQuestion + 1)", "\(party.totalQuestions)")
+        timerTitleLabel.text = NSLocalizedString("question.turn.timer.title", comment: "Temps restant")
+        remainingCriteriasTitleLabel.text = NSLocalizedString("question.turn.remaining.criterias.title", comment: "Critères à valider")
+        pauseButton.setTitle(NSLocalizedString("question.turn.pause.button", comment: "Pause"), for: .normal)
 
         talkingPlayersView.layer.borderWidth = 2
         talkingPlayersView.layer.borderColor = Helper.UIColorFromHex(0x02AAB0).cgColor
@@ -72,9 +77,13 @@ class QuestionTurnViewController: UIViewController {
 
         if let currentQuestions = party.questionsSets[party.currentQuestion].questions {
             if let questionViewContent = Bundle.main.loadNibNamed("QuestionCardView", owner: self, options: nil)?[0] as? QuestionCardView {
-                if let currentSelectedQuestion = party.currentSelectedQuestion, currentQuestions.count > currentSelectedQuestion, let labels = currentQuestions[currentSelectedQuestion].labels, let question = labels[Locale.current.languageCode?.uppercased() ?? "EN"] {
+                if let currentSelectedQuestion = party.currentSelectedQuestion, currentQuestions.count > currentSelectedQuestion, let labels = currentQuestions[currentSelectedQuestion].labels {
+                    let localLanguage = Locale.current.languageCode?.uppercased() ?? "FR"
+                    let question = labels[localLanguage] ?? labels["FR"] ?? ""
+
                     questionViewContent.configure(identifier: nil, question: question, delegate: nil)
                     questionStackView.addArrangedSubview(questionViewContent)
+                        
                 }
             }
         }
@@ -93,10 +102,11 @@ class QuestionTurnViewController: UIViewController {
     }
     
     @objc private func questionTimeout(){
-        
-        
+        guard let party = self.party else {
+            return
+        }
         if let timeElapsedController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllersID.TimeElapsedVC.rawValue) as? TimeElapsedViewController {
-            timeElapsedController.configure(party: self.party!)
+            timeElapsedController.configure(party: party)
             timeElapsedController.modalPresentationStyle = .overFullScreen
             self.present(timeElapsedController, animated: true)
         }
@@ -130,16 +140,28 @@ class QuestionTurnViewController: UIViewController {
         let minutes: Int = (totalSeconds / 60) % 60
         return String(format: "%02d:%02d", minutes, seconds)
     }
+    
+    func displayPartyFinished() {
+        
+        if let partyFinishedController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(identifier: ViewControllersID.PartyFinishedVC.rawValue) as? PartyFinishedViewController {
+            partyFinishedController.modalPresentationStyle = .overFullScreen
+            partyFinishedController.configure(party: self.party!)
+            self.present(partyFinishedController, animated: true)
+        }
+    }
 }
 
 extension QuestionTurnViewController: PauseAlertViewControllerDelegate{
-    func resumeGame(){
+    func resumeGame() {
          self.dismiss(animated: true)
         startTimer()
     }
-    func exitGame(){
-         self.dismiss(animated: true)
-    
+    func exitGame() {
+        self.dismiss(animated: true)
+        if let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllersID.HomeVC.rawValue) as? HomeViewController {
+            homeViewController.modalPresentationStyle = .fullScreen
+            self.present(homeViewController, animated: true, completion: nil)
+        }
     }
 }
 
@@ -164,23 +186,31 @@ extension QuestionTurnViewController: UICollectionViewDataSource, UICollectionVi
             guard let party = self.party else {
                 return
             }
+            
+//            print("*** displayed criterias ----->")
+//            for item in party.displayedCriterias {
+//                print("\n***                         \(item.title)/ validated :\(item.validatedAuditors) ")
+//            }
             var criteria = party.displayedCriterias[indexPath.row]
             criteria.validatedAuditors = criteria.validatedAuditors + 1
             party.displayedCriterias[indexPath.row] = criteria
+           
+//            print("$$$ displayed criterias ----->")
+//                       for item in party.displayedCriterias {
+//                           print("\n***                         \(item.title)/ validated :\(item.validatedAuditors) ")
+//                       }
             
             cell.didAuditorValidated(withCriteria: criteria)
             if criteria.validatedAuditors >= 2 {
                 let _ = self.party?.validateCriteriaAndPullNewOne(criteriaToValidate: cell.criteria!)
+//                print("€€€ displayed criterias ----->")
+//                           for item in party.displayedCriterias {
+//                               print("\n***                         \(item.title)/ validated :\(item.validatedAuditors) ")
+//                           }
                 collectionView.reloadData()
-                self.remainingCriteriasLabel.text = "\(self.party!.pendingCriterias.count+party.displayedCriterias.count)"
-                
-                if totalTime > 0 && self.party!.pendingCriterias.isEmpty &&  party.displayedCriterias.isEmpty  {
-                    //TODO SUCCESS
-                    pauseTimer()
-                    print("🎉🎉🎉 Success 🎉🎉🎉")
-                } else if totalTime == 0 && (!self.party!.pendingCriterias.isEmpty || !party.displayedCriterias.isEmpty) {
-                    //PROBLEM
-                   // print("💔💔💔 Echec et mat 💔💔💔")
+                self.remainingCriteriasLabel.text = "\(self.party!.pendingCriterias.count + party.displayedCriterias.count)"
+                if party.pendingCriterias.isEmpty && party.displayedCriterias.isEmpty {
+                    displayPartyFinished()
                 }
             }
         }

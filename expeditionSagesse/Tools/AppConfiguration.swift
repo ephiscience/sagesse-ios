@@ -10,10 +10,12 @@ import Foundation
 import UIKit
 
 public enum ViewControllersID: String {
+    case HomeVC = "HomeViewControllerID"
     case SelectQuestionVC = "SelectQuestionViewControllerID"
     case QuestionTurnVC = "QuestionTurnViewControllerID"
     case PauseAlertVC = "PauseAlertViewControllerID"
     case TimeElapsedVC = "TimeElapsedViewControllerID"
+    case PartyFinishedVC = "PartyFinishedViewControllerID"
     
 }
 

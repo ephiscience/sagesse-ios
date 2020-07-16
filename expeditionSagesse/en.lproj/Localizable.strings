@@ -21,3 +21,21 @@
 "selectQuestion.judgePlayersLabel" = "Auditors";
 "selectQuestion.selectQuestionLabel" = "You must choose the question that will be discussed among the two below.";
 "selectQuestion.startQuestionButton.label" = "Start Question";
+"question.turn.timer.title" = "Remaining time";
+"question.turn.pause.button" = "Pause";
+"pause.alert.title" = "Pause";
+"pause.alert.resume.button" = "Resume";
+"pause.alert.exit.button" = "Leave the game";
+"question.turn.remaining.criterias.title" = "Criterias to validate";
+"game.finished.congrats.title" = "Great!";
+"game.finished.congrats.message" = "You won the party thanks to your collaboration.";
+"game.finished.failure.title" = "Oups!";
+"game.finished.failure.message" = "You lost the party, try better next time";
+"game.finisehd.replay.button" = "Replay a party";
+"time.elapsed.alert.title" = "Time elapsed";
+"time.elapsed.alert.question" = "Auditors, do you consider that the orators answered correctly to the question?";
+"time.elapsed.alert.yes.button" = "Yes";
+"time.elapsed.alert.no.button" = "No";
+"validate.criteria.question" = "Orators, you answered correctly to the question,\n you can validate a criteria card of your choice.";
+
+

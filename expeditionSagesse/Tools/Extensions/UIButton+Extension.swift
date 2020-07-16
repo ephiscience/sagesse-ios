@@ -26,6 +26,9 @@ extension UIButton {
         gradientLayer.shadowOpacity = 0.3
         gradientLayer.masksToBounds = false
 
+        if let gradient = self.layer.sublayers?.first as? CAGradientLayer {
+            gradient.removeFromSuperlayer()
+        }
         self.layer.insertSublayer(gradientLayer, at: 0)
         self.contentVerticalAlignment = .center
         self.setTitleColor(UIColor.white, for: .normal)

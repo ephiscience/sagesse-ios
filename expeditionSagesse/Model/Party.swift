@@ -24,6 +24,7 @@ public class Party {
     public var currentSelectedQuestion: Int?
     public var pendingCriterias: [PartyCriteria] = []
     public var displayedCriterias: [PartyCriteria] = []
+    public var isPartySucceeded : Bool = false
 
     public init(players: [Player], criterias: [PartyCriteria]) {
         self.players = players
@@ -147,5 +148,13 @@ public class Party {
             }
         }
         return nil
+    }
+    
+    public func updateIsPartySucceeded() {
+        if displayedCriterias.isEmpty && pendingCriterias.isEmpty {
+            isPartySucceeded = true
+        } else {
+            isPartySucceeded = false
+        }
     }
 }

@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
 
     var possiblePlayersNumber : [Int] = [3, 4, 5, 6]
     
+    @IBOutlet weak var headerTitle: UILabel!
     @IBOutlet weak var playersNumberTitle: UILabel!
     @IBOutlet weak var playersNumberPicker: UIPickerView!
     
@@ -32,6 +33,10 @@ class HomeViewController: UIViewController {
         gameDifficultyPicker.delegate = self
         gameDifficultyPicker.dataSource = self
         
+        headerTitle.text = NSLocalizedString("home.welcome.message", comment: "Bienvenue à\nExpedition Sagesse")
+        playersNumberTitle.text = NSLocalizedString("home.choose.playersNumber", comment: "Sélectionnez le nombre de joueurs")
+        gameDifficultyLabel.text = NSLocalizedString("home.choose.difficultyLevel", comment: "Choisissez le niveau de difficulté")
+        nextStepButton.setTitle(NSLocalizedString("continue.button", comment: "Continuer"), for: .normal)
       
         
         self.nextStepButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])

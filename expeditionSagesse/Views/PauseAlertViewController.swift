@@ -16,7 +16,7 @@ protocol PauseAlertViewControllerDelegate {
 }
 
 class PauseAlertViewController: UIViewController {
-    
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var resumeButton: UIButton!
     @IBOutlet weak var exitButton: UIButton!
     var delegate: PauseAlertViewControllerDelegate?
@@ -26,6 +26,10 @@ class PauseAlertViewController: UIViewController {
         super.viewDidLoad()
         self.resumeButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
         self.exitButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
+        
+        titleLabel.text = NSLocalizedString("pause.alert.title", comment: "Pause")
+        resumeButton.setTitle(NSLocalizedString("pause.alert.resume.button", comment: "Reprendre"), for: .normal)
+        exitButton.setTitle(NSLocalizedString("pause.alert.exit.button", comment: "Quitter la partie"), for: .normal)
     }
     
     @IBAction func didTapResume(){

@@ -14,6 +14,8 @@ class ValidateCriteriaByOratorsViewController: UIViewController {
 
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var questionView: UIView!
     @IBOutlet weak var talkingPlayersView: UIView!
     @IBOutlet weak var talkingPlayersStackView: UIStackView!
     
@@ -45,8 +47,13 @@ class ValidateCriteriaByOratorsViewController: UIViewController {
         if let wallpaperImage = UIImage(named: "wallpaper") {
             backgroundView.backgroundColor = UIColor(patternImage: wallpaperImage)
         }
+        
+        questionView.layer.borderWidth = 2
+        questionView.layer.borderColor = Helper.UIColorFromHex(0x02AAB0).cgColor
+        questionView.backgroundColor = .white
 
         titleLabel.text = String.localizedStringWithFormat(NSLocalizedString("selectQuestion.title", comment: "Question a/n"), "\(party.currentQuestion + 1)", "\(party.totalQuestions)")
+        questionLabel.text = NSLocalizedString("validate.criteria.question", comment: "Orateurs, vous avez bien répondu à la question,\n vous pouvez valider une carte critère de votre choix.")
 
         talkingPlayersView.layer.borderWidth = 2
         talkingPlayersView.layer.borderColor = Helper.UIColorFromHex(0x02AAB0).cgColor
@@ -57,6 +64,14 @@ class ValidateCriteriaByOratorsViewController: UIViewController {
                 playerView.configure(playerName: playerName, playerAvatar: playerAvatar)
                 talkingPlayersStackView.addArrangedSubview(playerView)
             }
+        }
+    }
+    
+    func displayPartyFinished(){
+       if let partyFinishedController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(identifier: ViewControllersID.PartyFinishedVC.rawValue) as? PartyFinishedViewController {
+            partyFinishedController.modalPresentationStyle = .overFullScreen
+            partyFinishedController.configure(party: self.party!)
+            self.present(partyFinishedController, animated: true)
         }
     }
     
@@ -83,14 +98,17 @@ extension ValidateCriteriaByOratorsViewController: UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let party = self.party {
             let selectedCriteria = party.displayedCriterias[indexPath.row] 
-            let _ = party.validateCriteriaAndPullNewOne(criteriaToValidate: selectedCriteria)
+            let criteria = party.validateCriteriaAndPullNewOne(criteriaToValidate: selectedCriteria)
+            if criteria != nil && party.currentQuestion < party.totalQuestions - 1 {
                 party.nextQuestion()
-            
-             if let selectQuestionController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllersID.SelectQuestionVC.rawValue) as? SelectQuestionViewController {
-                
-                selectQuestionController.configure(party: party)
-                selectQuestionController.modalPresentationStyle = .fullScreen
-                self.present(selectQuestionController, animated: true, completion: nil)
+                if let selectQuestionController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllersID.SelectQuestionVC.rawValue) as? SelectQuestionViewController {
+                    
+                    selectQuestionController.configure(party: party)
+                    selectQuestionController.modalPresentationStyle = .fullScreen
+                    self.present(selectQuestionController, animated: true, completion: nil)
+                }
+            } else {
+                displayPartyFinished()
             }
         }
         

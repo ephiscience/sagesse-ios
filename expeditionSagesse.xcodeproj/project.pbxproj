@@ -16,6 +16,7 @@
 		3D7965A5245C78CD00D3D5B9 /* Questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D7965A4245C78CD00D3D5B9 /* Questions.json */; };
 		3D9DE9E12454898E002DCC67 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D9DE9E02454898E002DCC67 /* PlayerView.xib */; };
 		3D9DE9E324548B21002DCC67 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9DE9E224548B21002DCC67 /* PlayerView.swift */; };
+		821B0963249BA8BB006B1D5C /* PartyFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821B0962249BA8BB006B1D5C /* PartyFinishedViewController.swift */; };
 		8288089A2455D38F0085C9EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808972455D38F0085C9EE /* HomeViewController.swift */; };
 		8288089B2455D38F0085C9EE /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808982455D38F0085C9EE /* PlayersViewController.swift */; };
 		8288089C2455D38F0085C9EE /* SelectQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808992455D38F0085C9EE /* SelectQuestionViewController.swift */; };
@@ -29,7 +30,6 @@
 		82A71A162496933E0063D936 /* ValidateCriteriaByOratorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A71A152496933E0063D936 /* ValidateCriteriaByOratorsViewController.swift */; };
 		82B3596624606410009BFD79 /* CriteriaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3596524606410009BFD79 /* CriteriaCollectionViewCell.swift */; };
 		82D1A24C248D679B008D0CC8 /* PauseAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1A24B248D679B008D0CC8 /* PauseAlertViewController.swift */; };
-		82D1A24E248D67AB008D0CC8 /* PauseAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D1A24D248D67AB008D0CC8 /* PauseAlertViewController.xib */; };
 		82D412CE2459C061003BA5A3 /* criterias.json in Resources */ = {isa = PBXBuildFile; fileRef = 82D412CD2459C061003BA5A3 /* criterias.json */; };
 		82D412D0245D863B003BA5A3 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D412CF245D863B003BA5A3 /* DataProvider.swift */; };
 		82D412D2245D869C003BA5A3 /* GameCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D412D1245D869C003BA5A3 /* GameCriteria.swift */; };
@@ -63,6 +63,7 @@
 		3D7965A4245C78CD00D3D5B9 /* Questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Questions.json; sourceTree = "<group>"; };
 		3D9DE9E02454898E002DCC67 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		3D9DE9E224548B21002DCC67 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		821B0962249BA8BB006B1D5C /* PartyFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyFinishedViewController.swift; sourceTree = "<group>"; };
 		828808972455D38F0085C9EE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		828808982455D38F0085C9EE /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
 		828808992455D38F0085C9EE /* SelectQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectQuestionViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		82A71A152496933E0063D936 /* ValidateCriteriaByOratorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCriteriaByOratorsViewController.swift; sourceTree = "<group>"; };
 		82B3596524606410009BFD79 /* CriteriaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaCollectionViewCell.swift; sourceTree = "<group>"; };
 		82D1A24B248D679B008D0CC8 /* PauseAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseAlertViewController.swift; sourceTree = "<group>"; };
-		82D1A24D248D67AB008D0CC8 /* PauseAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseAlertViewController.xib; sourceTree = "<group>"; };
 		82D412CD2459C061003BA5A3 /* criterias.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = criterias.json; sourceTree = "<group>"; };
 		82D412CF245D863B003BA5A3 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		82D412D1245D869C003BA5A3 /* GameCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCriteria.swift; sourceTree = "<group>"; };
@@ -128,7 +128,6 @@
 				3D1CD107245740D500C6D250 /* QuestionCardView.swift */,
 				82B3596524606410009BFD79 /* CriteriaCollectionViewCell.swift */,
 				82D1A24B248D679B008D0CC8 /* PauseAlertViewController.swift */,
-				82D1A24D248D67AB008D0CC8 /* PauseAlertViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +140,7 @@
 				828808992455D38F0085C9EE /* SelectQuestionViewController.swift */,
 				3D7965A2245C700C00D3D5B9 /* QuestionTurnViewController.swift */,
 				82A71A13249689F10063D936 /* TimeElapsedViewController.swift */,
+				821B0962249BA8BB006B1D5C /* PartyFinishedViewController.swift */,
 				82A71A152496933E0063D936 /* ValidateCriteriaByOratorsViewController.swift */,
 			);
 			path = ViewControllers;
@@ -318,7 +318,6 @@
 				3D1CD106245740C700C6D250 /* QuestionCardView.xib in Resources */,
 				82F5F7242452F0E8001642A3 /* Assets.xcassets in Resources */,
 				82D412CE2459C061003BA5A3 /* criterias.json in Resources */,
-				82D1A24E248D67AB008D0CC8 /* PauseAlertViewController.xib in Resources */,
 				82F5F7222452F0E6001642A3 /* Main.storyboard in Resources */,
 				3D9DE9E12454898E002DCC67 /* PlayerView.xib in Resources */,
 			);
@@ -360,6 +359,7 @@
 				828808A72455D45B0085C9EE /* AppConfiguration.swift in Sources */,
 				82F5F73A245324B5001642A3 /* SceneDelegate.swift in Sources */,
 				82D412D0245D863B003BA5A3 /* DataProvider.swift in Sources */,
+				821B0963249BA8BB006B1D5C /* PartyFinishedViewController.swift in Sources */,
 				82A71A162496933E0063D936 /* ValidateCriteriaByOratorsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
