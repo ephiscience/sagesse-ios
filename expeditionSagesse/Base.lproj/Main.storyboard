@@ -150,7 +150,7 @@
                                                                     <rect key="frame" x="15" y="9" width="60" height="60"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </imageView>
-                                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sss" borderStyle="roundedRect" placeholder="Nom du joueur X" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Otd-wf-0Tl">
+                                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sss" borderStyle="roundedRect" placeholder="Nom du joueur X" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Otd-wf-0Tl">
                                                                     <rect key="frame" x="83" y="22" width="251" height="34"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -453,7 +453,7 @@
                                                         <rect key="frame" x="92" y="10" width="223" height="70"/>
                                                     </stackView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_Microphone_2853358" translatesAutoresizingMaskIntoConstraints="NO" id="ESd-yD-Ef3">
-                                                        <rect key="frame" x="20" y="19" width="52" height="52.000000000000057"/>
+                                                        <rect key="frame" x="20" y="19" width="52" height="52"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="eLN-zb-TiE"/>
                                                             <constraint firstAttribute="width" constant="52" id="qHm-22-c5d"/>

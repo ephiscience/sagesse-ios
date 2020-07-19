@@ -80,7 +80,7 @@
 		82D412CD2459C061003BA5A3 /* criterias.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = criterias.json; sourceTree = "<group>"; };
 		82D412CF245D863B003BA5A3 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		82D412D1245D869C003BA5A3 /* GameCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCriteria.swift; sourceTree = "<group>"; };
-		82F5F7172452F0E6001642A3 /* expeditionSagesse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = expeditionSagesse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82F5F7172452F0E6001642A3 /* Sagesse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sagesse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F5F71A2452F0E6001642A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82F5F7212452F0E6001642A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82F5F7232452F0E8001642A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 		82F5F7182452F0E6001642A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				82F5F7172452F0E6001642A3 /* expeditionSagesse.app */,
+				82F5F7172452F0E6001642A3 /* Sagesse.app */,
 				3D0C488524544CA300CE1EFF /* expeditionSagesseTests.xctest */,
 			);
 			name = Products;
@@ -258,7 +258,7 @@
 			);
 			name = expeditionSagesse;
 			productName = expeditionSagesseStoryboard;
-			productReference = 82F5F7172452F0E6001642A3 /* expeditionSagesse.app */;
+			productReference = 82F5F7172452F0E6001642A3 /* Sagesse.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -566,15 +566,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RX7J2U5N53;
+				DEVELOPMENT_TEAM = SCU79SB35P;
 				INFOPLIST_FILE = expeditionSagesse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.ephiscience.expeditionSagesse;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.ephiscience.sagesse1;
+				PRODUCT_NAME = Sagesse;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -585,15 +585,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RX7J2U5N53;
+				DEVELOPMENT_TEAM = SCU79SB35P;
 				INFOPLIST_FILE = expeditionSagesse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.ephiscience.expeditionSagesse;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.ephiscience.sagesse1;
+				PRODUCT_NAME = Sagesse;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
