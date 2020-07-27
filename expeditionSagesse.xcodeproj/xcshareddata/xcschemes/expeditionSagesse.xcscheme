@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "82F5F7162452F0E6001642A3"
-               BuildableName = "expeditionSagesse.app"
+               BuildableName = "Sagesse.app"
                BlueprintName = "expeditionSagesse"
                ReferencedContainer = "container:expeditionSagesse.xcodeproj">
             </BuildableReference>
@@ -55,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "82F5F7162452F0E6001642A3"
-            BuildableName = "expeditionSagesse.app"
+            BuildableName = "Sagesse.app"
             BlueprintName = "expeditionSagesse"
             ReferencedContainer = "container:expeditionSagesse.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "82F5F7162452F0E6001642A3"
-            BuildableName = "expeditionSagesse.app"
+            BuildableName = "Sagesse.app"
             BlueprintName = "expeditionSagesse"
             ReferencedContainer = "container:expeditionSagesse.xcodeproj">
          </BuildableReference>

@@ -56,7 +56,7 @@ class QuestionTurnViewController: UIViewController {
         self.remainingCriteriasLabel.text = "\(party.pendingCriterias.count+party.displayedCriterias.count)"
 
         if let wallpaperImage = UIImage(named: AppConfiguration.backgroundImageName) {
-            backgroundView.backgroundColor = UIColor(patternImage: wallpaperImage)
+            view.backgroundColor = UIColor(patternImage: wallpaperImage)
         }
 
         titleLabel.text = String.localizedStringWithFormat(NSLocalizedString("selectQuestion.title", comment: "Question a/n"), "\(party.currentQuestion + 1)", "\(party.totalQuestions)")

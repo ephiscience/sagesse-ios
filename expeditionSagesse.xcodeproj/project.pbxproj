@@ -573,6 +573,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.ephiscience.sagesse1;
 				PRODUCT_NAME = Sagesse;
 				SWIFT_VERSION = 5.0;
@@ -592,6 +593,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.ephiscience.sagesse1;
 				PRODUCT_NAME = Sagesse;
 				SWIFT_VERSION = 5.0;

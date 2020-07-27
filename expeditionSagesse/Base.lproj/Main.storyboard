@@ -238,7 +238,7 @@
         <scene sceneID="Aaf-KM-eFE">
             <objects>
                 <viewController storyboardIdentifier="SelectQuestionViewControllerID" id="nmU-vw-6g3" customClass="SelectQuestionViewController" customModule="expeditionSagesse" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UWS-cw-38l" userLabel="View" customClass="Selec">
+                    <view key="view" contentMode="scaleToFill" id="UWS-cw-38l" userLabel="View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -270,7 +270,7 @@
                                                                 <rect key="frame" x="10" y="108.5" width="160" height="0.0"/>
                                                             </stackView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_Microphone_2853358" translatesAutoresizingMaskIntoConstraints="NO" id="4ah-vj-Tdh">
-                                                                <rect key="frame" x="-16" y="33.5" width="212" height="50.000000000000057"/>
+                                                                <rect key="frame" x="-122" y="33.5" width="424" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="Xld-0x-7Km"/>
                                                                 </constraints>
@@ -364,7 +364,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="ljp-q0-79Q" secondAttribute="bottom" constant="20" id="4nN-HW-sZI"/>
                                             <constraint firstItem="BKD-oh-RKo" firstAttribute="leading" secondItem="c1v-3r-GYA" secondAttribute="leading" constant="5" id="AEy-VP-oX8"/>
@@ -384,6 +384,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="c1v-3r-GYA" firstAttribute="leading" secondItem="ASB-TS-yrM" secondAttribute="leading" id="Njw-gF-A4K"/>
                                     <constraint firstAttribute="bottom" secondItem="c1v-3r-GYA" secondAttribute="bottom" id="Pmo-SG-bJp"/>
@@ -613,7 +614,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="nkH-BA-CQc" secondAttribute="trailing" constant="16" id="5Be-If-5XZ"/>
                                             <constraint firstAttribute="trailing" secondItem="Rx1-Xw-Q1U" secondAttribute="trailing" constant="20" id="5Rd-8Z-YZT"/>
@@ -636,6 +637,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="YRI-NS-nRR" secondAttribute="trailing" id="4ks-av-Gbt"/>
                                     <constraint firstItem="YRI-NS-nRR" firstAttribute="height" secondItem="1v7-rQ-pg1" secondAttribute="height" priority="250" id="AW4-78-hPV"/>
@@ -956,7 +958,7 @@
                                                         <rect key="frame" x="92" y="10" width="253" height="70"/>
                                                     </stackView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_Microphone_2853358" translatesAutoresizingMaskIntoConstraints="NO" id="yVM-na-0jn">
-                                                        <rect key="frame" x="20" y="19" width="52" height="52.000000000000057"/>
+                                                        <rect key="frame" x="20" y="19" width="52" height="52"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="52" id="Z4y-EE-DLK"/>
                                                             <constraint firstAttribute="height" constant="52" id="mWN-nk-ayW"/>
