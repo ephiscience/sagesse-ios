@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import AVFoundation
 
 class QuestionTurnViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
@@ -29,6 +29,9 @@ class QuestionTurnViewController: UIViewController {
     
     private var timer: Timer?
     var totalTime = 15//60*3
+    
+    
+    private var audioPlayer: AVAudioPlayer?
     
     // MARK: Collection View properties
     let criteriaCollectionViewCellID = "criteriaCollectionViewCellID"
@@ -149,6 +152,37 @@ class QuestionTurnViewController: UIViewController {
             self.present(partyFinishedController, animated: true)
         }
     }
+    
+    func playCriteriaOneSound() {
+        guard let url = Bundle.main.url(forResource: "ARCADE_Slide_Up", withExtension: "mp3") else { return }
+        playSound(fromUrl: url)
+    }
+    
+    func playCriteriaTwoSound() {
+        guard let url = Bundle.main.url(forResource: "ARCADE_Slide_Down", withExtension: "mp3") else { return }
+        playSound(fromUrl: url)
+    }
+    
+    func playSound(fromUrl url: URL) {
+
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+
+            /* iOS 10 and earlier require the following line:
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+
+            guard let audioPlayer = audioPlayer else { return }
+
+            audioPlayer.play()
+
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 }
 
 extension QuestionTurnViewController: PauseAlertViewControllerDelegate{
@@ -202,6 +236,7 @@ extension QuestionTurnViewController: UICollectionViewDataSource, UICollectionVi
             
             cell.didAuditorValidated(withCriteria: criteria)
             if criteria.validatedAuditors >= 2 {
+                playCriteriaTwoSound()
                 let _ = self.party?.validateCriteriaAndPullNewOne(criteriaToValidate: cell.criteria!)
 //                print("€€€ displayed criterias ----->")
 //                           for item in party.displayedCriterias {
@@ -212,6 +247,8 @@ extension QuestionTurnViewController: UICollectionViewDataSource, UICollectionVi
                 if party.pendingCriterias.isEmpty && party.displayedCriterias.isEmpty {
                     displayPartyFinished()
                 }
+            } else {
+                playCriteriaOneSound()
             }
         }
     }

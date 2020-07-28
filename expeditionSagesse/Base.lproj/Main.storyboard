@@ -27,7 +27,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeViewControllerID" id="BYZ-38-t0r" customClass="HomeViewController" customModule="expeditionSagesse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewControllerID" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Sagesse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,7 +112,7 @@
         <!--Players View Controller-->
         <scene sceneID="0wx-Nf-Plg">
             <objects>
-                <viewController id="t5H-su-NIB" customClass="PlayersViewController" customModule="expeditionSagesse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="t5H-su-NIB" customClass="PlayersViewController" customModule="Sagesse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w0o-yU-BDr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,7 +139,7 @@
                                                     <constraint firstAttribute="height" constant="480" id="uVn-5d-qa4"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerTableViewCellId" rowHeight="80" id="Aog-bZ-JYb" customClass="PlayerTableViewCell" customModule="expeditionSagesse" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerTableViewCellId" rowHeight="80" id="Aog-bZ-JYb" customClass="PlayerTableViewCell" customModule="Sagesse" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aog-bZ-JYb" id="cgI-FC-QcF">
@@ -237,7 +237,7 @@
         <!--Select Question View Controller-->
         <scene sceneID="Aaf-KM-eFE">
             <objects>
-                <viewController storyboardIdentifier="SelectQuestionViewControllerID" id="nmU-vw-6g3" customClass="SelectQuestionViewController" customModule="expeditionSagesse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectQuestionViewControllerID" id="nmU-vw-6g3" customClass="SelectQuestionViewController" customModule="Sagesse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UWS-cw-38l" userLabel="View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -430,7 +430,7 @@
         <!--Question Turn View Controller-->
         <scene sceneID="pIU-dW-JCD">
             <objects>
-                <viewController storyboardIdentifier="QuestionTurnViewControllerID" id="gp7-WL-g72" customClass="QuestionTurnViewController" customModule="expeditionSagesse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionTurnViewControllerID" id="gp7-WL-g72" customClass="QuestionTurnViewController" customModule="Sagesse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rWQ-qY-WAt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -558,7 +558,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="criteriaCollectionViewCellID" id="URm-k3-X9j" customClass="CriteriaCollectionViewCell" customModule="expeditionSagesse" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="criteriaCollectionViewCellID" id="URm-k3-X9j" customClass="CriteriaCollectionViewCell" customModule="Sagesse" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="98"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6EZ-sN-KfK">
@@ -680,7 +680,7 @@
         <!--Pause Alert View Controller-->
         <scene sceneID="VOM-DU-ivq">
             <objects>
-                <viewController storyboardIdentifier="PauseAlertViewControllerID" id="X6T-Nw-c1l" customClass="PauseAlertViewController" customModule="expeditionSagesse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PauseAlertViewControllerID" id="X6T-Nw-c1l" customClass="PauseAlertViewController" customModule="Sagesse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="991-l5-ghV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -761,7 +761,7 @@
         <!--Party Finished View Controller-->
         <scene sceneID="F3q-Ub-IJ9">
             <objects>
-                <viewController storyboardIdentifier="PartyFinishedViewControllerID" id="VyI-5o-Yis" customClass="PartyFinishedViewController" customModule="expeditionSagesse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PartyFinishedViewControllerID" id="VyI-5o-Yis" customClass="PartyFinishedViewController" customModule="Sagesse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E9T-Cy-wrZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -845,7 +845,7 @@
         <!--Time Elapsed View Controller-->
         <scene sceneID="Fki-7D-2sm">
             <objects>
-                <viewController storyboardIdentifier="TimeElapsedViewControllerID" id="nhC-4j-di8" customClass="TimeElapsedViewController" customModule="expeditionSagesse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimeElapsedViewControllerID" id="nhC-4j-di8" customClass="TimeElapsedViewController" customModule="Sagesse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hYn-Xg-o4J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -934,7 +934,7 @@
         <!--Validate Criteria By Orators View Controller-->
         <scene sceneID="Cyw-Zt-G6b">
             <objects>
-                <viewController id="WMw-Ia-kbW" customClass="ValidateCriteriaByOratorsViewController" customModule="expeditionSagesse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WMw-Ia-kbW" customClass="ValidateCriteriaByOratorsViewController" customModule="Sagesse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pBo-lE-SJ5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -991,7 +991,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="criteriaCollectionViewCellID" id="iNb-Ha-dZz" customClass="CriteriaCollectionViewCell" customModule="expeditionSagesse" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="criteriaCollectionViewCellID" id="iNb-Ha-dZz" customClass="CriteriaCollectionViewCell" customModule="Sagesse" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="98"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aiL-eX-Pdf">

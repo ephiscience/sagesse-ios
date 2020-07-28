@@ -28,6 +28,8 @@
 		828808AD2455D57D0085C9EE /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828808AC2455D57D0085C9EE /* UIButton+Extension.swift */; };
 		82A71A14249689F10063D936 /* TimeElapsedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A71A13249689F10063D936 /* TimeElapsedViewController.swift */; };
 		82A71A162496933E0063D936 /* ValidateCriteriaByOratorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A71A152496933E0063D936 /* ValidateCriteriaByOratorsViewController.swift */; };
+		82AD4FCE24CF6806001E046B /* ARCADE_Slide_Down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82AD4FCC24CF6805001E046B /* ARCADE_Slide_Down.mp3 */; };
+		82AD4FCF24CF6806001E046B /* ARCADE_Slide_Up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82AD4FCD24CF6805001E046B /* ARCADE_Slide_Up.mp3 */; };
 		82B3596624606410009BFD79 /* CriteriaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3596524606410009BFD79 /* CriteriaCollectionViewCell.swift */; };
 		82D1A24C248D679B008D0CC8 /* PauseAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1A24B248D679B008D0CC8 /* PauseAlertViewController.swift */; };
 		82D412CE2459C061003BA5A3 /* criterias.json in Resources */ = {isa = PBXBuildFile; fileRef = 82D412CD2459C061003BA5A3 /* criterias.json */; };
@@ -75,6 +77,8 @@
 		828808AC2455D57D0085C9EE /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		82A71A13249689F10063D936 /* TimeElapsedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeElapsedViewController.swift; sourceTree = "<group>"; };
 		82A71A152496933E0063D936 /* ValidateCriteriaByOratorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCriteriaByOratorsViewController.swift; sourceTree = "<group>"; };
+		82AD4FCC24CF6805001E046B /* ARCADE_Slide_Down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ARCADE_Slide_Down.mp3; sourceTree = "<group>"; };
+		82AD4FCD24CF6805001E046B /* ARCADE_Slide_Up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ARCADE_Slide_Up.mp3; sourceTree = "<group>"; };
 		82B3596524606410009BFD79 /* CriteriaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaCollectionViewCell.swift; sourceTree = "<group>"; };
 		82D1A24B248D679B008D0CC8 /* PauseAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseAlertViewController.swift; sourceTree = "<group>"; };
 		82D412CD2459C061003BA5A3 /* criterias.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = criterias.json; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 		82D412CC2459C04B003BA5A3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				82AD4FCC24CF6805001E046B /* ARCADE_Slide_Down.mp3 */,
+				82AD4FCD24CF6805001E046B /* ARCADE_Slide_Up.mp3 */,
 				82D412CD2459C061003BA5A3 /* criterias.json */,
 				3D7965A4245C78CD00D3D5B9 /* Questions.json */,
 			);
@@ -316,10 +322,12 @@
 				3D7965A5245C78CD00D3D5B9 /* Questions.json in Resources */,
 				82F5F7332452F723001642A3 /* Localizable.strings in Resources */,
 				3D1CD106245740C700C6D250 /* QuestionCardView.xib in Resources */,
+				82AD4FCE24CF6806001E046B /* ARCADE_Slide_Down.mp3 in Resources */,
 				82F5F7242452F0E8001642A3 /* Assets.xcassets in Resources */,
 				82D412CE2459C061003BA5A3 /* criterias.json in Resources */,
 				82F5F7222452F0E6001642A3 /* Main.storyboard in Resources */,
 				3D9DE9E12454898E002DCC67 /* PlayerView.xib in Resources */,
+				82AD4FCF24CF6806001E046B /* ARCADE_Slide_Up.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
