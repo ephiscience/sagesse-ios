@@ -10,12 +10,18 @@ import Foundation
 import UIKit
 
 public enum ViewControllersID: String {
+    case HomeVC = "HomeViewControllerID"
     case SelectQuestionVC = "SelectQuestionViewControllerID"
     case QuestionTurnVC = "QuestionTurnViewControllerID"
+    case PauseAlertVC = "PauseAlertViewControllerID"
+    case TimeElapsedVC = "TimeElapsedViewControllerID"
+    case PartyFinishedVC = "PartyFinishedViewControllerID"
+    
 }
 
 public enum SegueIdentifier: String {
     case ChoosePlayersNamesSegue = "ChoosePlayersNamesSegue"
+    case ValidateCriteriaByOratorsSegue = "ValidateCriteriaByOratorsSegue"
 }
 
 
@@ -38,4 +44,6 @@ class AppConfiguration {
             return .fr
         }
     }
+    
+    static let backgroundImageName = "gplaypattern"
 }

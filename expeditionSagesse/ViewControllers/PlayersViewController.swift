@@ -22,6 +22,7 @@ class PlayersViewController: UIViewController {
     var numberOfCriterias : Int = 0
     var players : [Player] = []
     var imageNames = ["horse", "cow", "goose", "lion", "girafe", "elephant"]
+    var defaultPlayerNames = ["Savanna", "Lola", "Nemo", "Lisa", "Snoopy", "Cookie"]
     
     let cellHeight = 80
     
@@ -30,12 +31,16 @@ class PlayersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let wallpaperImage = UIImage(named: AppConfiguration.backgroundImageName) {
+            view.backgroundColor = UIColor(patternImage: wallpaperImage)
+        }
+        
         enterPlayersNamesLabel.text = NSLocalizedString("players.choose.name.title", comment: "Enter players name")
         startGameButton.setTitle( NSLocalizedString("button.start.game", comment: "Start the game"), for: .normal)
         
         imageNames.shuffle()
         for i in 0..<playersNumber {
-          let player = Player(identifier: i+1, name: nil, imageName: imageNames[i])
+          let player = Player(identifier: i+1, name: defaultPlayerNames[i], imageName: imageNames[i])
             players.append(player)
         }
         
@@ -45,6 +50,9 @@ class PlayersViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+        
+        
+        startGameButton.isEnabled = true
     }
 
     @IBAction func startTheGame() {

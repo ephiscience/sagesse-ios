@@ -38,8 +38,8 @@ class SelectQuestionViewController: UIViewController {
             return
         }
 
-        if let wallpaperImage = UIImage(named: "wallpaper") {
-            backgroundView.backgroundColor = UIColor(patternImage: wallpaperImage)
+        if let wallpaperImage = UIImage(named: AppConfiguration.backgroundImageName) {
+            view.backgroundColor = UIColor(patternImage: wallpaperImage)
         }
 
         titleLabel.text = String.localizedStringWithFormat(NSLocalizedString("selectQuestion.title", comment: "Question a/n"), "\(party.currentQuestion + 1)", "\(party.totalQuestions)")
@@ -79,13 +79,19 @@ class SelectQuestionViewController: UIViewController {
         
         if let currentQuestions = party.questionsSets[party.currentQuestion].questions {
             if let question1View = Bundle.main.loadNibNamed("QuestionCardView", owner: self, options: nil)?[0] as? QuestionCardView {
-                if currentQuestions.count > 0, let labels = currentQuestions[0].labels, let question = labels[Locale.current.languageCode?.uppercased() ?? "EN"] {
+                if currentQuestions.count > 0, let labels = currentQuestions[0].labels {
+                    let localLanguage = Locale.current.languageCode?.uppercased() ?? "FR"
+                    let question = labels[localLanguage] ?? labels["FR"] ?? ""
+
                     question1View.configure(identifier: 0, question: question, delegate: self)
                     questionSelectionStackView.addArrangedSubview(question1View)
                 }
             }
             if let question2View = Bundle.main.loadNibNamed("QuestionCardView", owner: self, options: nil)?[0] as? QuestionCardView {
-                if currentQuestions.count > 1, let labels = currentQuestions[1].labels, let question = labels[Locale.current.languageCode?.uppercased() ?? "EN"] {
+                if currentQuestions.count > 1, let labels = currentQuestions[1].labels{
+                    let localLanguage = Locale.current.languageCode?.uppercased() ?? "FR"
+                    let question = labels[localLanguage] ?? labels["FR"] ?? ""
+
                     question2View.configure(identifier: 1, question: question, delegate: self)
                     questionSelectionStackView.addArrangedSubview(question2View)
                 }
@@ -93,15 +99,20 @@ class SelectQuestionViewController: UIViewController {
         }
 
         startQuestionButton.setTitle( NSLocalizedString("selectQuestion.startQuestionButton.label", comment: "Start question"), for: .normal)
-        startQuestionButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
+        startQuestionButton.applyGradient(colors: [Helper.UIColorFromHex(0x4F4E4E).cgColor, Helper.UIColorFromHex(0xA9A6A6).cgColor])
+        startQuestionButton.isEnabled = false
+        startQuestionButton.setTitleColor(.white, for: .disabled)
+       
     }
 
     @IBAction func startQuestion() {
-        if let questionTurnViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllersID.QuestionTurnVC.rawValue) as? QuestionTurnViewController {
-            if let party = self.party {
-                questionTurnViewController.configure(party: party)
-                questionTurnViewController.modalPresentationStyle = .fullScreen
-                self.present(questionTurnViewController, animated: true, completion: nil)
+        if self.party?.currentSelectedQuestion != nil {
+            if let questionTurnViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllersID.QuestionTurnVC.rawValue) as? QuestionTurnViewController {
+                if let party = self.party {
+                    questionTurnViewController.configure(party: party)
+                    questionTurnViewController.modalPresentationStyle = .fullScreen
+                    self.present(questionTurnViewController, animated: true, completion: nil)
+                }
             }
         }
     }
@@ -110,7 +121,9 @@ class SelectQuestionViewController: UIViewController {
 extension SelectQuestionViewController: QuestionCardViewDelegate {
     func questionCardDidTap(identifier: Int) {
         self.party?.currentSelectedQuestion = identifier
-
+        startQuestionButton.isEnabled = true
+        startQuestionButton.applyGradient(colors: [Helper.UIColorFromHex(0x02AAB0).cgColor,Helper.UIColorFromHex(0x00CDAC).cgColor])
+        
         if let question1View = questionSelectionStackView.arrangedSubviews[0] as? QuestionCardView, let question2View = questionSelectionStackView.arrangedSubviews[1] as? QuestionCardView {
             if identifier == 0 {
                 question1View.setBorderColor(color: UIColor.red.cgColor)

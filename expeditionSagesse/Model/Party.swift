@@ -8,7 +8,13 @@
 
 import Foundation
 
+public struct PartyCriteria {
+    var title: String
+    var validatedAuditors: Int
+}
+
 public class Party {
+    
     var players: [Player]
     var totalQuestions: Int = 8
     var currentQuestion: Int = 0
@@ -16,11 +22,14 @@ public class Party {
     public var judgePlayers: [[Player]] = []
     public var questionsSets: [QuestionsSet] = []
     public var currentSelectedQuestion: Int?
-    public var criterias: [String] = []
+    public var pendingCriterias: [PartyCriteria] = []
+    public var displayedCriterias: [PartyCriteria] = []
+    public var isPartySucceeded : Bool = false
 
-    public init(players: [Player], criterias: [String]) {
+    public init(players: [Player], criterias: [PartyCriteria]) {
         self.players = players
-        self.criterias = criterias
+        self.pendingCriterias = criterias
+        self.displayedCriterias = self.getInitialCriterias()
     }
 
     public func nextQuestion() {
@@ -115,5 +124,37 @@ public class Party {
             }
         }
         return result
+    }
+    
+    public func getInitialCriterias() -> [PartyCriteria] {
+        var initialArray: [PartyCriteria] = self.pendingCriterias
+        if self.pendingCriterias.count >= 3 {
+            initialArray = Array(self.pendingCriterias.prefix(3))
+            self.pendingCriterias.removeFirst(3)
+        }
+        
+        return initialArray
+    }
+    
+    public func validateCriteriaAndPullNewOne(criteriaToValidate: PartyCriteria) -> PartyCriteria? {
+            
+        if let index = self.displayedCriterias.firstIndex(where: {$0.title == criteriaToValidate.title}){
+            if !self.pendingCriterias.isEmpty {
+                self.displayedCriterias[index] = self.pendingCriterias.removeFirst()
+                return  self.displayedCriterias[index]
+            } else {
+                self.displayedCriterias.remove(at: index)
+                return nil
+            }
+        }
+        return nil
+    }
+    
+    public func updateIsPartySucceeded() {
+        if displayedCriterias.isEmpty && pendingCriterias.isEmpty {
+            isPartySucceeded = true
+        } else {
+            isPartySucceeded = false
+        }
     }
 }

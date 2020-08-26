@@ -6,7 +6,6 @@
   Copyright © 2020 ephiscience. All rights reserved.
 */
 
-
 "home.welcome.message" = "Bienvenue à\nExpedition Sagesse";
 "home.choose.playersNumber" = "Sélectionnez le nombre de joueurs";
 "home.choose.difficultyLevel" = "Choisissez le niveau de difficulté";
@@ -22,3 +21,20 @@
 "selectQuestion.startQuestionButton.label" = "Lancer la question";
 "player.name.placeholder" = "Nom du joueur %1$d";
 "button.start.game" = "Lancer la partie";
+"question.turn.timer.title" = "Temps restant";
+"question.turn.remaining.criterias.title" = "Critères à valider";
+"question.turn.pause.button" = "Pause";
+"pause.alert.title" = "Pause";
+"pause.alert.resume.button" = "Reprendre";
+"pause.alert.exit.button" = "Quitter la partie";
+"game.finished.congrats.title" = "Bravo!";
+"game.finished.congrats.message" = "Vous avez gagné grâce à votre collaboration.";
+"game.finished.failure.title" = "Zut!";
+"game.finished.failure.message" = "Vous avez perdu cette fois-ci, la prochaine sera la bonne.";
+"game.finisehd.replay.button" = "Rejouer une partie";
+"time.elapsed.alert.title" = "Temps écoulé";
+"time.elapsed.alert.question" = "Auditeurs, considérez vous que les orateurs ont bien répondu à la question?";
+"time.elapsed.alert.yes.button" = "Oui";
+"time.elapsed.alert.no.button" = "Non";
+"validate.criteria.question" = "Orateurs, vous avez bien répondu à la question,\n vous pouvez valider une carte critère de votre choix.";
+
